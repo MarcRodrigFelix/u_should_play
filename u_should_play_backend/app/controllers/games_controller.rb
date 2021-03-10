@@ -1,7 +1,6 @@
 class GamesController < ApplicationController
 
   def index
-binding.pry
     games = Game.all
     render json: games.to_json(
       only: [ :title, :image, :review ], 
@@ -12,7 +11,6 @@ binding.pry
   end
 
   def create
-binding.pry
     game = Game.new(game_params)
     if game.save #if game saves successfully
       render json: game, status: :accepted #show render of game
