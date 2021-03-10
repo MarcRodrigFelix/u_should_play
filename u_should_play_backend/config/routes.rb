@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'games/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # FOR NAMESPACING IF YOU WANT:
@@ -7,6 +8,6 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  resources :games, only: [ :index ]
+  resources :games, only: [ :index, :create ]
 
 end
