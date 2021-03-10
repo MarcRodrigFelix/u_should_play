@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
 
   def index
+binding.pry
     games = Game.all
     render json: games.to_json(
       only: [ :title, :image, :review ], 
@@ -13,10 +14,10 @@ class GamesController < ApplicationController
   def create
 binding.pry
     game = Game.new(game_params)
-    if game.save
-      render json: game, status: :accepted
-    else
-      render json: {errors: game.errors.full_messages}, status: :unprocessible_entity
+    if game.save #if game saves successfully
+      render json: game, status: :accepted #show render of game
+    else #if not
+      render json: {errors: game.errors.full_messages}, status: :unprocessible_entity #show error to front end
     end
   end
 
