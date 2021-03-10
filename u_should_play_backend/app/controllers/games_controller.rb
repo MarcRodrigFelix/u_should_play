@@ -1,8 +1,8 @@
 class GamesController < ApplicationController
 
   def index
-    game = Game.all
-    render json: game.to_json(
+    games = Game.all
+    render json: games.to_json(
       only: [ :title, :image, :review ], 
       include: [ 
         comments: { 
