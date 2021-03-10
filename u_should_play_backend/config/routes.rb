@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  resources :games, only: [ :index ]
+  resources :games, only: [ :index, :create ]
 
 end
