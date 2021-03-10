@@ -14,7 +14,7 @@ function fetchAllGames(){
       const gameHTMLContent = `
         <div data-id=${game.id}>
           <h3>${game.title}</h3>
-          <img src=${game.image}>
+          <img src=${game.image} style="width: 350px">
           <p>${game.review}</p>
         </div>`
         document.getElementById('all-games').innerHTML += gameHTMLContent
