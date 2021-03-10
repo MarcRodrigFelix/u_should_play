@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_03_10_044708) do
     t.string "commentator"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "game_id"
+    t.integer "game_id", null: false
     t.index ["game_id"], name: "index_comments_on_game_id"
   end
 
