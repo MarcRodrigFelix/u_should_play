@@ -17,8 +17,18 @@ function fetchAllGames(){
           <img src=${game.image} style="width: 350px">
           <p>${game.review}</p>
         </div>`
-        document.getElementById('all-games').innerHTML += gameHTMLContent
+      
+      document.getElementById('all-games').innerHTML += gameHTMLContent;
+
+      renderGameComments(game.comments, game.title)
     })
   } )
   .catch( error => console.log(error.message) )
 };
+
+
+
+
+function renderGameComments(gameComms, game){
+  gameComms.forEach( comm => console.log(`comment: ${comm.content} user: ${comm.commentator} game: ${game}`) )
+}
