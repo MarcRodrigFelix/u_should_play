@@ -40,12 +40,7 @@ function renderGameComments(gameComms, game){
 // listen to form, and post game
 const newGameForm = document.getElementById('new-game-form');
 
-function postNewGameData(game){
-  const gameData = {
-    title: game.get('title'),
-    image: game.get('image'),
-    review: game.get('review')
-  }
+function postNewGameData(gameData){
 
   fetch("http://localhost:3000/games", {
     method: 'POST',
@@ -62,6 +57,11 @@ function addNewGameFromForm(form){
   form.addEventListener('submit', (e) => {
     e.preventDefault()
     let formData = new FormData(e.target)
-    postNewGameData(formData)
+    const gameData = {
+      title: formData.get('title'),
+      image: formData.get('image'),
+      review: formData.get('review')
+    }
+    postNewGameData(gameData)
   })
 };
