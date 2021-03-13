@@ -1,14 +1,13 @@
 
 class FetchGameApi{
   constructor(){
-    // this.BASE_URL = "http://localhost:3000/games"
   }
 
   static getGamesFetch(){
     return fetch("http://localhost:3000/games")
     .then( response => response.json() )
     // .catch( error => console.log(error.message) )
-  }
+  };
 
 
   static postGamesFetch(gameData){
@@ -22,4 +21,20 @@ class FetchGameApi{
     })
     .then( resp => resp.json())
   };
+
+
+  static deleteGame(gameId){
+    const id = parseInt(gameId)
+    fetch(`http://localhost:3000/games/${gameId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+  };
+
+
 }
+
+
+

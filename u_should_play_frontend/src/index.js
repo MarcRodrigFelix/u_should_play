@@ -1,3 +1,5 @@
+const newGameForm = document.getElementById('new-game-form');
+
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchAndRenderGames();
@@ -16,25 +18,16 @@ function fetchAndRenderGames(){
   
   document.querySelectorAll('.delete').forEach( game => {
     game.addEventListener('click', (e) => {
-      deleteGame(e.target.dataset.id)
+      FetchGameApi.deleteGame(e.target.dataset.id)
     })
   })
 })
 }
-// function renderGameComments(gameComms, game){
-//   gameComms.forEach( comm => `comment: ${comm.content} user: ${comm.commentator} game: ${game}` )
-// };
-
-
 
 
 // listen to form, and POST game
-
-const newGameForm = document.getElementById('new-game-form');
-
 function addNewGameFromForm(form){
   form.addEventListener('submit', (e) => {
-    e.preventDefault()
     let formData = new FormData(e.target)
     const gameData = {
       title: formData.get('title'),
@@ -44,17 +37,3 @@ function addNewGameFromForm(form){
     FetchGameApi.postGamesFetch(gameData)
   })
 };
-
-
-
-// EDIT or DELETE game POST
-
-function deleteGame(gameId){
-  let id = parseInt(gameId)
-  fetch(`http://localhost:3000/games/${gameId}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-}
