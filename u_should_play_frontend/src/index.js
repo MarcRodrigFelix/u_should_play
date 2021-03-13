@@ -11,21 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
 function fetchAllGames(){
   fetch( GAMES_URL )
   .then( response => response.json() )
-  .then( games => {
-    games.forEach( game => {
+  .then( gamesObj => {
+    gamesObj.forEach( gameObject=> {
+      const newGame = new Game(gameObject)
+      document.getElementById('all-games').innerHTML += newGame.renderGameHTML();
 
-      const gameHTMLContent = `
-        <div data-id=${game.id} class="single-game-div">
-          <h3>${game.title}</h3>
-          <img src=${game.image} style="width: 350px">
-          <p>${game.review}</p>
-          <button class=game-${game.id}>Delete ${game.title}</button>
-        </div>`
-      
-      document.getElementById('all-games').innerHTML += gameHTMLContent;
-      let el = document.querySelectorAll(`.single-game-div`)
-console.log(el)
-      renderGameComments(game.comments, game.title)
+      // renderGameComments(game.comments, game.title)
     })
   } )
   .catch( error => console.log(error.message) )
