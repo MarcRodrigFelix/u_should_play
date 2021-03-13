@@ -72,3 +72,17 @@ function addNewGameFromForm(form){
 
 
 // EDIT or DELETE game POST
+
+function deleteGame(gameId, game){
+  fetch(`http://localhost:3000/games/${gameId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(game)
+  })
+  .then(response => response.json())
+}
+
+// get game and gameid
