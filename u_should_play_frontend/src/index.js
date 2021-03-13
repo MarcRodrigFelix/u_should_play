@@ -18,7 +18,7 @@ function fetchAllGames(){
           <h3>${game.title}</h3>
           <img src=${game.image} style="width: 350px">
           <p>${game.review}</p>
-          <button>Delete ${game.title}</button>
+          <button class=game-${game.id}>Delete ${game.title}</button>
         </div>`
       
       document.getElementById('all-games').innerHTML += gameHTMLContent;
@@ -86,6 +86,6 @@ function deleteGame(gameId){
 
 
 function deleteGameWithId(){
-
+  const deleteBTN = document.getElementById("")
 }
 // get game and gameid
