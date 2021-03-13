@@ -15,8 +15,6 @@ function fetchAllGames(){
     gamesObj.forEach( gameObject=> {
       const newGame = new Game(gameObject)
       document.getElementById('all-games').innerHTML += newGame.renderGameHTML();
-
-      // renderGameComments(game.comments, game.title)
     })
   } )
   .catch( error => console.log(error.message) )
