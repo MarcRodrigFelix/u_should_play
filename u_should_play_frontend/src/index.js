@@ -14,7 +14,7 @@ function fetchAllGames(){
     games.forEach( game => {
 
       const gameHTMLContent = `
-        <div data-id=${game.id}>
+        <div data-id=${game.id} class="single-game-div">
           <h3>${game.title}</h3>
           <img src=${game.image} style="width: 350px">
           <p>${game.review}</p>
@@ -86,6 +86,8 @@ function deleteGame(gameId){
 
 
 function deleteGameWithId(){
-  const deleteBTN = document.getElementById("")
+  deleteBTN.addEventListener("click", () => {
+    console.log(gameId)
+  })
 }
 // get game and gameid
