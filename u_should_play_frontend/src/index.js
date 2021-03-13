@@ -10,18 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function fetchAndRenderGames(){
   FetchGameApi.getGamesFetch()
-  .then( gamesObj => {
-    gamesObj.forEach( gameObject => {
-    const newGame = new Game(gameObject)
-    document.getElementById('all-games').innerHTML += newGame.renderGameHTML();
-  })
-  
-  document.querySelectorAll('.delete').forEach( game => {
-    game.addEventListener('click', (e) => {
-      FetchGameApi.deleteGame(e.target.dataset.id)
+    .then( gamesObj => {
+      gamesObj.forEach( gameObject => {
+      const newGame = new Game(gameObject)
+      document.getElementById('all-games').innerHTML += newGame.renderGameHTML();
+    })
+    
+    document.querySelectorAll('.delete').forEach( game => {
+      game.addEventListener('click', (e) => {
+        FetchGameApi.deleteGame(e.target.dataset.id)
+      })
+    })
+
+    document.querySelectorAll('.edit').forEach( editBtn => {
+      editBtn.addEventListener('click', (e) => {
+        e.target.parentNode.children[6].classList.toggle('hidden')
+      })
     })
   })
-})
 }
 
 

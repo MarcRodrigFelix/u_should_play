@@ -17,10 +17,11 @@ class Game{
       <h3>${this.title}</h3>
       <img src=${this.image} style="width: 350px">
       <p>${this.review}</p>
-      || <button data-id=${this.id} class="delete"> Delete ${this.title}</button> || <button>Edit</button> ||
-    </div>
-    <div class='hidden'>
-      ${this.renderGameEditForm()}
+      || <button data-id=${this.id} class="delete"> Delete ${this.title}</button> || <button data-id=${this.id} class="edit" >Edit</button> ||
+      <br>
+      <div id="${this.id}" class="hidden">
+        ${this.renderGameEditForm()}
+      </div>
     </div>`
   }
 
@@ -35,7 +36,7 @@ class Game{
         <br>
         <input type="text" id="review" name="review" placeholder="Review"><br>
         <br>
-        <input type="submit" value="Edit" class="edit">
+        <input type="submit" value="Submit" name="submit">
       </form>`
   }
 
