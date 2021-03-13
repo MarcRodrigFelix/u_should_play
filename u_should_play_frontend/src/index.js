@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   addNewGameFromForm(newGameForm);
 });
 
-// get games and render to html
+// FETCH games and render to html
 
 function fetchAllGames(){
   fetch( GAMES_URL )
@@ -29,19 +29,18 @@ function fetchAllGames(){
 };
 
 
-
-
 function renderGameComments(gameComms, game){
   gameComms.forEach( comm => console.log(`comment: ${comm.content} user: ${comm.commentator} game: ${game}`) )
 };
 
 
 
-// listen to form, and post game
+
+// listen to form, and POST game
+
 const newGameForm = document.getElementById('new-game-form');
 
 function postNewGameData(gameData){
-
   fetch("http://localhost:3000/games", {
     method: 'POST',
     headers: {
@@ -52,6 +51,7 @@ function postNewGameData(gameData){
   })
   .then( resp => resp.json())
 };
+
 
 function addNewGameFromForm(form){
   form.addEventListener('submit', (e) => {
@@ -65,3 +65,10 @@ function addNewGameFromForm(form){
     postNewGameData(gameData)
   })
 };
+
+
+
+
+
+
+// EDIT or DELETE game POST
