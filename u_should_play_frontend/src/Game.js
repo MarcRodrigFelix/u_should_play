@@ -17,8 +17,7 @@ class Game{
       <h3>${this.title}</h3>
       <img src=${this.image} style="width: 350px">
       <p>${this.review}</p>
-      <p>${new Comment(Game.comments).renderCommentHTML()}
-      <button class=game-${this.id}>Delete ${this.title}</button>
+      <button data-id=${this.id} class="delete"> Delete ${this.title}</button>
     </div>`
   }
 

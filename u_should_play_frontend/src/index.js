@@ -16,14 +16,21 @@ function fetchAllGames(){
       const newGame = new Game(gameObject)
       document.getElementById('all-games').innerHTML += newGame.renderGameHTML();
     })
-  } )
+    
+    document.querySelectorAll('.delete').forEach( game => {
+      game.addEventListener('click', (e) => {
+        deleteGame(e.target.dataset.id)
+      })
+    })
+
+  })
   .catch( error => console.log(error.message) )
 };
 
 
-function renderGameComments(gameComms, game){
-  gameComms.forEach( comm => `comment: ${comm.content} user: ${comm.commentator} game: ${game}` )
-};
+// function renderGameComments(gameComms, game){
+//   gameComms.forEach( comm => `comment: ${comm.content} user: ${comm.commentator} game: ${game}` )
+// };
 
 
 
@@ -66,6 +73,7 @@ function addNewGameFromForm(form){
 // EDIT or DELETE game POST
 
 function deleteGame(gameId){
+  let id = parseInt(gameId)
   fetch(`http://localhost:3000/games/${gameId}`, {
     method: "DELETE",
     headers: {
@@ -74,12 +82,3 @@ function deleteGame(gameId){
   })
   .then(response => response.json())
 }
-
-function deleteGameWithId(){
-  const games = document.getElementById("all-games")
-  games.forEach( function(el){
-    console.log(games)
-  })
-}
-
-// get game and gameid
