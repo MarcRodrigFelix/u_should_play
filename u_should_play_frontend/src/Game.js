@@ -18,7 +18,25 @@ class Game{
       <img src=${this.image} style="width: 350px">
       <p>${this.review}</p>
       || <button data-id=${this.id} class="delete"> Delete ${this.title}</button> || <button>Edit</button> ||
+    </div>
+    <div class='hidden'>
+      ${this.renderGameEditForm()}
     </div>`
+  }
+
+
+  renderGameEditForm(){
+    return `
+    <br>
+      <form id="edit-form">
+        <input type="text" id="title" name="title" placeholder="Title"><br>
+        <br>
+        <input type="text" id="image" name="image" placeholder="Image"><br>
+        <br>
+        <input type="text" id="review" name="review" placeholder="Review"><br>
+        <br>
+        <input type="submit" value="Edit" class="edit">
+      </form>`
   }
 
 
