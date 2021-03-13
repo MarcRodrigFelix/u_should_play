@@ -1,33 +1,26 @@
-const GAMES_URL = 'http://localhost:3000/games';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  fetchAllGames();
+  // fetchAllGames();
+  fetchAndRenderGames();
   addNewGameFromForm(newGameForm);
 });
 
-// FETCH games and render to html
-
-function fetchAllGames(){
-  fetch( GAMES_URL )
-  .then( response => response.json() )
+function fetchAndRenderGames(){
+  FetchGameApi.getGamesFetch()
   .then( gamesObj => {
-    gamesObj.forEach( gameObject=> {
-      const newGame = new Game(gameObject)
-      document.getElementById('all-games').innerHTML += newGame.renderGameHTML();
-    })
-    
-    document.querySelectorAll('.delete').forEach( game => {
-      game.addEventListener('click', (e) => {
-        deleteGame(e.target.dataset.id)
-      })
-    })
-
+    gamesObj.forEach( gameObject => {
+    const newGame = new Game(gameObject)
+    document.getElementById('all-games').innerHTML += newGame.renderGameHTML();
   })
-  .catch( error => console.log(error.message) )
-};
-
-
+  
+  document.querySelectorAll('.delete').forEach( game => {
+    game.addEventListener('click', (e) => {
+      deleteGame(e.target.dataset.id)
+    })
+  })
+})
+}
 // function renderGameComments(gameComms, game){
 //   gameComms.forEach( comm => `comment: ${comm.content} user: ${comm.commentator} game: ${game}` )
 // };
@@ -67,9 +60,6 @@ function addNewGameFromForm(form){
 
 
 
-
-
-
 // EDIT or DELETE game POST
 
 function deleteGame(gameId){
@@ -80,5 +70,4 @@ function deleteGame(gameId){
       "Content-Type": "application/json"
     }
   })
-  .then(response => response.json())
 }
