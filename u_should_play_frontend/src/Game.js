@@ -17,7 +17,7 @@ class Game{
       <h3>${this.title}</h3>
       <img src=${this.image} style="width: 350px">
       <p>${this.review}</p>
-      <button data-id=${this.id} class="delete"> Delete ${this.title}</button>
+      || <button data-id=${this.id} class="delete"> Delete ${this.title}</button> || <button>Edit</button> ||
     </div>`
   }
 
