@@ -1,10 +1,10 @@
 
-
 document.addEventListener('DOMContentLoaded', () => {
-  // fetchAllGames();
   fetchAndRenderGames();
   addNewGameFromForm(newGameForm);
 });
+
+
 
 function fetchAndRenderGames(){
   FetchGameApi.getGamesFetch()
@@ -32,19 +32,6 @@ function fetchAndRenderGames(){
 
 const newGameForm = document.getElementById('new-game-form');
 
-function postNewGameData(gameData){
-  fetch("http://localhost:3000/games", {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify(gameData)
-  })
-  .then( resp => resp.json())
-};
-
-
 function addNewGameFromForm(form){
   form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -54,7 +41,7 @@ function addNewGameFromForm(form){
       image: formData.get('image'),
       review: formData.get('review')
     }
-    postNewGameData(gameData)
+    FetchGameApi.postGamesFetch(gameData)
   })
 };
 
