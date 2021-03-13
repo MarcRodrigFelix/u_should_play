@@ -1,7 +1,8 @@
 const GAMES_URL = 'http://localhost:3000/games';
 
+
 document.addEventListener('DOMContentLoaded', () => {
-  fetchAllGames()
+  fetchAllGames();
   addNewGameFromForm(newGameForm);
 });
 
@@ -22,7 +23,8 @@ function fetchAllGames(){
         </div>`
       
       document.getElementById('all-games').innerHTML += gameHTMLContent;
-
+      let el = document.querySelectorAll(`.single-game-div`)
+console.log(el)
       renderGameComments(game.comments, game.title)
     })
   } )
@@ -31,7 +33,7 @@ function fetchAllGames(){
 
 
 function renderGameComments(gameComms, game){
-  gameComms.forEach( comm => console.log(`comment: ${comm.content} user: ${comm.commentator} game: ${game}`) )
+  gameComms.forEach( comm => `comment: ${comm.content} user: ${comm.commentator} game: ${game}` )
 };
 
 
@@ -84,10 +86,11 @@ function deleteGame(gameId){
   .then(response => response.json())
 }
 
-
 function deleteGameWithId(){
-  deleteBTN.addEventListener("click", () => {
-    console.log(gameId)
+  const games = document.getElementById("all-games")
+  games.forEach( function(el){
+    console.log(games)
   })
 }
+
 // get game and gameid
