@@ -30,7 +30,7 @@ function fetchAndRenderGames(){
 // ITERATE THROUGH EACH EDIT FORM AND SUBMIT BUTTON
 let editForms = document.querySelectorAll('#edit-form')
     for (let editForm of editForms){
-      submitEditForm(editForm, editForm.dataset.id) // send each games html tags through and game id
+      submitEditForm(editForm) // send each edit form through
     }
   })
 }
@@ -51,8 +51,9 @@ function addNewGameFromForm(form){
 
 
 // listen to edit form submit button and PATCH game
-function submitEditForm(editForm, gameId){
+function submitEditForm(editForm){
   editForm.addEventListener('click', (e) => {
+e.preventDefault()
     if (e.target.className === 'edit-btn'){
       const gameID = e.target.parentNode.dataset.id
       const editedGameData = {
