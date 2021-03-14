@@ -14,26 +14,26 @@ function fetchAndRenderGames(){
       gamesObj.forEach( gameObject => {
       const newGame = new Game(gameObject)
       document.getElementById('all-games').innerHTML += newGame.renderGameHTML();
-    })
+    });
 // DELETE GAME EVENT LISTENER
     document.querySelectorAll('.delete').forEach( game => {
       game.addEventListener('click', (e) => {
         FetchGameApi.deleteGame(e.target.dataset.id)
       })
-    })
+    });
 // TOGGLE HIDDEN CLASS FOR EDIT FORM EVENT LISTENER
     document.querySelectorAll('.edit').forEach( editBtn => {
       editBtn.addEventListener('click', (e) => {
         e.target.parentNode.children[6].classList.toggle('hidden')
       })
-    })
+    });
 // ITERATE THROUGH EACH EDIT FORM AND SUBMIT BUTTON
 let editForms = document.querySelectorAll('#edit-form')
     for (let editForm of editForms){
       submitEditForm(editForm) // send each edit form through
     }
   })
-}
+};
 
 
 // listen to form, and POST game

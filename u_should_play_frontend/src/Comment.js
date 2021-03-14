@@ -5,4 +5,12 @@ class Comment{
     this.game_id = commentObject.game_id
   }
 
+
+  renderCommentHTML(){
+    return `
+    <div class=game-comments id=${this.game_id}>
+      <h4>${this.commentator}<h4>
+      <p>${this.content}</p>
+    </div>`
+  }
 }
