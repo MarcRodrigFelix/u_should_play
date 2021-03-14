@@ -36,7 +36,7 @@ class Game{
         <br>
         <input type="text" id="review" name="review" placeholder="Review"><br>
         <br>
-        <input type="submit" value="Submit" name="edit" class="edit-btn">
+        <input type="submit" value="Submit" name="submit" class="edit-btn">
       </form>`
   }
 

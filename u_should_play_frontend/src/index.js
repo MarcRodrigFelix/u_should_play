@@ -52,21 +52,17 @@ function addNewGameFromForm(form){
 
 
 function submitEditForm(gameDiv, gameId){
-
-// console.log(gameId)
   Array.from(gameDiv).forEach( game => {
-    game.addEventListener('click', (e) => {
-      if ( e.target.parentNode.id === gameId ){
-        if ( e.target.className === 'edit-btn'){
-          const gamedID = gameId
-          const editedGameData = {
-            title: e.target.parentNode.title.value,
-            image: e.target.parentNode.image.value,
-            review: e.target.parentNode.review.value
-          }
-          FetchGameApi.updateGame(gameID, editedGameData)
-        }
+
+    game.addEventListener('submit', (e) => {
+      const gameID = e.target.parentNode.id
+      const editedGameData = {
+        title: e.target.title.value,
+        image: e.target.image.value,
+        review: e.target.review.value
       }
+      FetchGameApi.updateGame(gameID, editedGameData)
+    e.preventDefault()
     })
   })
 };

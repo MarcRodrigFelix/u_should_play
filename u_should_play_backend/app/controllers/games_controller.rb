@@ -14,9 +14,20 @@ class GamesController < ApplicationController
     end
   end
 
-  def edit
+  def update
 binding.pry
     game = Game.find_by(id: params[:id])
+    game.update(
+      title: params[:title],
+      image: params[:image],
+      review: params[:review]
+    )
+
+    if game.save
+      render json: game
+    else
+      render json: game.errors
+    end
   end
 
   def destroy
