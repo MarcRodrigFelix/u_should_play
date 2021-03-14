@@ -7,7 +7,7 @@ class Game{
     this.title = gameObject.title
     this.image = gameObject.image
     this.review = gameObject.review
-    Game.comments.push(gameObject.comments)
+    this.gameComments = gameObject.comments
   }
 
 

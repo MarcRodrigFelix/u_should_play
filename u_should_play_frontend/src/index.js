@@ -13,6 +13,7 @@ function fetchAndRenderGames(){
     .then( gamesObj => {
       gamesObj.forEach( gameObject => {
       const newGame = new Game(gameObject)
+console.log(newGame)
       document.getElementById('all-games').innerHTML += newGame.renderGameHTML();
     });
 // DELETE GAME EVENT LISTENER
