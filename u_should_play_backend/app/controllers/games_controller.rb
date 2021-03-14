@@ -14,6 +14,10 @@ class GamesController < ApplicationController
     end
   end
 
+  def edit
+binding.pry
+    game = Game.find_by(id: params[:id])
+  end
 
   def destroy
     Game.find(params[:id]).destroy
