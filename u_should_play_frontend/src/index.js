@@ -27,10 +27,10 @@ function fetchAndRenderGames(){
         e.target.parentNode.children[6].classList.toggle('hidden')
       })
     })
-// ITERATE THROUGH EACH GAME DIV FOR EDIT FORM AND SUBMIT BUTTON
-    const eachGameDiv = document.querySelectorAll('.single-game-div')
-    for (let gameDiv of eachGameDiv){
-      submitEditForm(gameDiv.children, gameDiv.dataset.id) // send each games html tags through and game id
+// ITERATE THROUGH EACH EDIT FORM AND SUBMIT BUTTON
+let editForms = document.querySelectorAll('#edit-form')
+    for (let editForm of editForms){
+      submitEditForm(editForm, editForm.dataset.id) // send each games html tags through and game id
     }
   })
 }
@@ -50,24 +50,17 @@ function addNewGameFromForm(form){
 };
 
 
-function submitEditForm(gameDiv, gameId){
-  Array.from(gameDiv).forEach( game => {
-
-    game.addEventListener('submit', (e) => {
-      const gameID = e.target.parentNode.id
+// listen to edit form submit button and PATCH game
+function submitEditForm(editForm, gameId){
+  editForm.addEventListener('click', (e) => {
+    if (e.target.className === 'edit-btn'){
+      const gameID = e.target.parentNode.dataset.id
       const editedGameData = {
-        title: e.target.title.value,
-        image: e.target.image.value,
-        review: e.target.review.value
+        title: e.target.parentNode.title.value,
+        image: e.target.parentNode.image.value,
+        review: e.target.parentNode.review.value
       }
       FetchGameApi.updateGame(gameID, editedGameData)
-    })
+    }
   })
 };
-
-
-// click edit to bring up edit form
-  // enter info
-    // retain values from input boxes
-  // click on submit to send info
-    // event listener for submit

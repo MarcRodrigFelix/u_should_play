@@ -29,12 +29,12 @@ class Game{
   renderGameEditForm(){
     return `
     <br>
-      <form id="edit-form">
-        <input type="text" id="title" name="title" placeholder="Title"><br>
+      <form data-id="${this.id}" id="edit-form">
+        <input type="text" id="title" name="title" value="${this.title}" placeholder="Title"><br>
         <br>
-        <input type="text" id="image" name="image" placeholder="Image"><br>
+        <input type="text" id="image" name="image" value="${this.image}" placeholder="Image"><br>
         <br>
-        <input type="text" id="review" name="review" placeholder="Review"><br>
+        <input type="text" id="review" name="review" value="${this.review}" placeholder="Review"><br>
         <br>
         <input type="submit" value="Submit" name="submit" class="edit-btn">
       </form>`
