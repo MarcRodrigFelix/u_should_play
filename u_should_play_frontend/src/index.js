@@ -27,11 +27,10 @@ function fetchAndRenderGames(){
         e.target.parentNode.children[6].classList.toggle('hidden')
       })
     })
+// ITERATE THROUGH EACH GAME DIV FOR EDIT FORM AND SUBMIT BUTTON
     const eachGameDiv = document.querySelectorAll('.single-game-div')
     for (let gameDiv of eachGameDiv){
-      // console.log(gameDiv.children)
-      // console.log(gameDiv.dataset.id)
-      submitEditForm(gameDiv.children, gameDiv.dataset.id) // send through each game div html tags, listen for submit and patch data
+      submitEditForm(gameDiv.children, gameDiv.dataset.id) // send each games html tags through and game id
     }
   })
 }
@@ -62,7 +61,6 @@ function submitEditForm(gameDiv, gameId){
         review: e.target.review.value
       }
       FetchGameApi.updateGame(gameID, editedGameData)
-    e.preventDefault()
     })
   })
 };
