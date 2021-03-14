@@ -22,9 +22,10 @@ class Game{
       <div id="${this.id}" class="hidden">
         ${this.renderGameEditForm()}
       </div>
-      <div>
+      <div class="comments">
+      <h3>Comments Section: </h3>
         <ul>
-          <li>${this.gameComments.forEach(com => new Comment(com))}</li>
+          <li>${this.renderComments(this.gameComments)}</li>
         </ul>
       </div>
     </div>`
@@ -46,5 +47,9 @@ class Game{
   }
 
 
+  renderComments(gameComments){
+    return `
+      <p>Comment: ${gameComments[0].content}. By: ${gameComments[0].commentator}.</p>`
+  }
 
 }
