@@ -1,6 +1,7 @@
 const newGameForm = document.getElementById('new-game-form');
 // const eachGameDiv = document.getElementsByClassName('single-game-div')
 
+
 document.addEventListener('DOMContentLoaded', () => {
   fetchAndRenderGames();
   addNewGameFromForm(newGameForm);
@@ -32,8 +33,9 @@ function fetchAndRenderGames(){
       })
     });
 // ITERATE THROUGH EACH EDIT FORM AND SUBMIT BUTTON
-    let editForms = document.querySelectorAll('#edit-form')
-      for (let editForm of editForms){
+const editForms = document.querySelectorAll('#edit-form');
+
+    for (let editForm of editForms){
         submitEditForm(editForm) // send each edit form through
     }
   })
@@ -56,18 +58,20 @@ function addNewGameFromForm(form){
 
 // listen to edit form submit button and PATCH game
 function submitEditForm(editForm){
-  editForm.addEventListener('click', (e) => {
+  console.log(editForm)
+  editForm.addEventListener('submit', (e) => {
 e.preventDefault()
-    if (e.target.className === 'edit-btn'){
-console.log('button')
-      const gameID = e.target.parentNode.dataset.id
+// console.log(e.target.dataset.id)
+    // if (e.target.className === 'edit-btn'){
+      const gameID = e.target.dataset.id
       const editedGameData = {
-        title: e.target.parentNode.title.value,
-        image: e.target.parentNode.image.value,
-        review: e.target.parentNode.review.value
+        title: e.target.title.value,
+        image: e.target.image.value,
+        review: e.target.review.value
       }
+// console.log(gameID, editedGameData)
       FetchGameApi.updateGame(gameID, editedGameData)
-    }
+    // }
   })
 };
 
