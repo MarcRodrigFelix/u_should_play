@@ -22,10 +22,10 @@ class Game{
       <div id="${this.id}" class="hidden">
         ${this.renderGameEditForm()}
       </div>
-      <div class="comments">
+      <div id ="comments" >
       <h3>Comments Section: </h3>
         <ul>
-          <li>${this.renderComments(this.gameComments)}</li>
+          <li>${this.renderEachGameComment(this.gameComments)}</li>
         </ul>
       </div>
     </div>`
@@ -47,9 +47,17 @@ class Game{
   }
 
 
-  renderComments(gameComments){
-    return `
-      <p><bold>Comment</bold>: ${gameComments[0].content}. By: ${gameComments[0].commentator}.</p>`
+  // renderComments(gameComments){
+  //   return `
+  //     <p><bold>Comment</bold>: ${gameComments[0].content}. By: ${gameComments[0].commentator}.</p>`
+  // }
+// passes each game comment through to render in HTML
+  renderEachGameComment(commentsArrayObj){
+    return commentsArrayObj.forEach( commentObj => {
+      const newComm = new Comment(commentObj)
+// console.log(newComm)
+      return newComm.renderCommentHTML()
+    })
   }
 
 }

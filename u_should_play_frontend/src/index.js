@@ -1,5 +1,5 @@
 const newGameForm = document.getElementById('new-game-form');
-
+// const eachGameDiv = document.getElementsByClassName('single-game-div')
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchAndRenderGames();
@@ -7,14 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 function fetchAndRenderGames(){
   FetchGameApi.getGamesFetch()
     .then( gamesObj => {
       gamesObj.forEach( gameObject => {
-      const newGame = new Game(gameObject)
-//       const newGameComms = new Comment(newGame.gameComments)
-// console.log(newGameComms)
+      const newGame = new Game(gameObject) // create a new game with Game class
+      //const newGameComms = new Comment(newGame.gameComments[0]) // create a new comment with Comment class
       document.getElementById('all-games').innerHTML += newGame.renderGameHTML();
     });
 // DELETE GAME EVENT LISTENER
@@ -30,10 +28,14 @@ function fetchAndRenderGames(){
       })
     });
 // ITERATE THROUGH EACH EDIT FORM AND SUBMIT BUTTON
-let editForms = document.querySelectorAll('#edit-form')
-    for (let editForm of editForms){
-      submitEditForm(editForm) // send each edit form through
+    let editForms = document.querySelectorAll('#edit-form')
+      for (let editForm of editForms){
+        submitEditForm(editForm) // send each edit form through
     }
+// ITERATE THROUGH EACH GAME TO RENDER COMMENTS
+    // Array.from(eachGameDiv).forEach( game => {
+    //   console.log(game)
+    // })
   })
 };
 
@@ -67,3 +69,6 @@ e.preventDefault()
     }
   })
 };
+
+
+// 
