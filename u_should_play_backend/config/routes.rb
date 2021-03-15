@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # end
 
   resources :games
+  resources :comments, only: [ :index ]
   # , only: [ :index, :create, :update ]
 
   
