@@ -49,7 +49,7 @@ class Game{
 
   renderComments(gameComments){
     return `
-      <p>Comment: ${gameComments[0].content}. By: ${gameComments[0].commentator}.</p>`
+      <p><bold>Comment</bold>: ${gameComments[0].content}. By: ${gameComments[0].commentator}.</p>`
   }
 
 }
