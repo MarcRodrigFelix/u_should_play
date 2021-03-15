@@ -17,16 +17,10 @@ class Game{
       <h3>${this.title}</h3>
       <img src=${this.image} style="width: 350px">
       <p>${this.review}</p>
-      || <button data-id=${this.id} class="delete"> Delete ${this.title}</button> || <button data-id=${this.id} class="edit" >Edit</button> ||
+      || <button data-id=${this.id} class="delete"> Delete ${this.title}</button> || <button data-id=${this.id} class="edit" >Edit</button> || <button class="comments-btn"> Comments </button>
       <br>
       <div id="${this.id}" class="hidden">
         ${this.renderGameEditForm()}
-      </div>
-      <div id ="comments" >
-      <h3>Comments Section: </h3>
-        <ul>
-          <li>${this.renderEachGameComment(this.gameComments)}</li>
-        </ul>
       </div>
     </div>`
   }
@@ -52,12 +46,12 @@ class Game{
   //     <p><bold>Comment</bold>: ${gameComments[0].content}. By: ${gameComments[0].commentator}.</p>`
   // }
 // passes each game comment through to render in HTML
-  renderEachGameComment(commentsArrayObj){
-    return commentsArrayObj.forEach( commentObj => {
-      const newComm = new Comment(commentObj)
-// console.log(newComm)
-      return newComm.renderCommentHTML()
-    })
-  }
+//   renderEachGameComment(commentsArrayObj){
+//     return commentsArrayObj.forEach( commentObj => {
+//       const newComm = new Comment(commentObj)
+// // console.log(newComm)
+//       return newComm.renderCommentHTML()
+//     })
+//   }
 
 }
