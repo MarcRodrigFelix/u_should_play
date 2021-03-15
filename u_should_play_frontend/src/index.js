@@ -24,7 +24,11 @@ function fetchAndRenderGames(){
 // TOGGLE HIDDEN CLASS FOR EDIT FORM EVENT LISTENER
     document.querySelectorAll('.edit').forEach( editBtn => {
       editBtn.addEventListener('click', (e) => {
-        e.target.parentNode.children[6].classList.toggle('hidden')
+        if (e.target.parentNode.children[6].style.display === 'none'){
+          e.target.parentNode.children[6].style.display = 'block'
+        } else {
+          e.target.parentNode.children[6].style.display = 'none'
+        }
       })
     });
 // ITERATE THROUGH EACH EDIT FORM AND SUBMIT BUTTON
@@ -32,10 +36,6 @@ function fetchAndRenderGames(){
       for (let editForm of editForms){
         submitEditForm(editForm) // send each edit form through
     }
-// ITERATE THROUGH EACH GAME TO RENDER COMMENTS
-    // Array.from(eachGameDiv).forEach( game => {
-    //   console.log(game)
-    // })
   })
 };
 
@@ -59,6 +59,7 @@ function submitEditForm(editForm){
   editForm.addEventListener('click', (e) => {
 e.preventDefault()
     if (e.target.className === 'edit-btn'){
+console.log('button')
       const gameID = e.target.parentNode.dataset.id
       const editedGameData = {
         title: e.target.parentNode.title.value,

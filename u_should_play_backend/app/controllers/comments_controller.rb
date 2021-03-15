@@ -11,5 +11,6 @@ class CommentsController < ApplicationController
     comment = Comment.find_by(id: params[:id])
     game = Game.find_by(id: comment.game_id)
     render json: game
-
+  end
+  
 end
