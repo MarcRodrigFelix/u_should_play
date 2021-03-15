@@ -17,11 +17,17 @@ class Game{
       <h3>${this.title}</h3>
       <img src=${this.image} style="width: 350px">
       <p>${this.review}</p>
-      || <button data-id=${this.id} class="delete"> Delete ${this.title}</button> || <button data-id=${this.id} class="edit" >Edit</button> 
+      || <button data-id=${this.id} class="delete"> Delete ${this.title}</button> || <button data-id=${this.id} class="edit" >Edit</button> ||
       <br>
       <div id="${this.id}" class="hidden"  style="display:none;">
         ${this.renderGameEditForm()}
       </div>
+      <br>
+      <div>
+        <button class="comments" >Check Comments</button>
+      </div>
+      <br>
+      <div style="border: 1px solid black; border-length: 25px;"></div>
     </div>`
   }
 

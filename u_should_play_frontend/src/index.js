@@ -61,19 +61,12 @@ function submitEditForm(editForm){
   console.log(editForm)
   editForm.addEventListener('submit', (e) => {
 e.preventDefault()
-// console.log(e.target.dataset.id)
-    // if (e.target.className === 'edit-btn'){
       const gameID = e.target.dataset.id
       const editedGameData = {
         title: e.target.title.value,
         image: e.target.image.value,
         review: e.target.review.value
       }
-// console.log(gameID, editedGameData)
       FetchGameApi.updateGame(gameID, editedGameData)
-    // }
   })
 };
-
-
-// 
