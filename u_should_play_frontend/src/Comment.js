@@ -28,7 +28,7 @@ class Comment{
       <input type="submit" value="Submit" name="submit" class="add-comm">
     </form>
     </div>`
-  }
+  };
 
 
 }

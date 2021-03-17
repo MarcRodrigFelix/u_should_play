@@ -1,12 +1,12 @@
 const newGameForm = document.getElementById('new-game-form');
-let eachGameDiv = document.getElementsByClassName("single-game-div");
+const addNewComment = document.getElementsByClassName('add');
+const eachGameDiv = document.getElementsByClassName("single-game-div");
 
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchAndRenderGames();
   addNewGameFromForm(newGameForm);
 });
-
 
 
 function fetchAndRenderGames(){
@@ -42,10 +42,20 @@ function fetchAndRenderGames(){
         submitEditForm(editForm)  // send each edit form through
     }
 
+    Array.from(addNewComment).forEach( addBtn => {
+      addBtn.addEventListener('click', (e) => {
+        // console.log(e.target.parentNode.children[1].style.display)
+        if (e.target.parentNode.children[1].style.display === 'none'){
+          e.target.parentNode.children[1].style.display = 'block'
+        } else {
+          e.target.parentNode.children[1].style.display = 'none'
+        }
+      })
+    })
   })
 };
 
-
+console.log(addNewComment)
 // listen to form, and POST game
 function addNewGameFromForm(form){
   form.addEventListener('submit', (e) => {

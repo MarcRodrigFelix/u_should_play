@@ -27,13 +27,13 @@ class Game{
       <div class="comments-section">
         <div>
           <!-- <button class="comments-btn"> Open Comments </button> -->
-          <button data-id=${this.id} class="add" > Add Comment </button>
-          <div data-id=${this.id} style="display:none;" >
+          <button data-id=${this.id} class="add"> Add Comment </button>
+          <div data-id=${this.id} style="display:none;">
             ${Comment.addComment()}
           </div>
         </div>
         <br>
-        <div data-id="${this.id}" class="game-comments" >
+        <div data-id="${this.id}" class="game-comments">
         </div>
       </div>
       <br>
