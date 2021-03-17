@@ -13,6 +13,7 @@ class Game{
 
   renderGameHTML(){
     return `
+    <div style="border: 1px solid black; border-length: 25px;"></div>
     <div data-id=${this.id} class="single-game-div">
       <h3>${this.title}</h3>
       <img src=${this.image} style="width: 350px">
@@ -25,14 +26,17 @@ class Game{
       <br>
       <div class="comments-section">
         <div>
-          <button data-id=${this.id} class="comments-btn" > Open Comments</button>
+          <!-- <button class="comments-btn"> Open Comments </button> -->
+          <button data-id=${this.id} class="add" > Add Comment </button>
+          <div data-id=${this.id} >
+            ${Comment.addComment()}
+          </div>
         </div>
         <br>
         <div data-id="${this.id}" class="game-comments">
         </div>
       </div>
       <br>
-      <div style="border: 1px solid black; border-length: 25px;"></div>
     </div>`
   }
 
@@ -64,5 +68,11 @@ class Game{
 //       return newComm.renderCommentHTML()
 //     })
 //   }
+
+
+
+
+
+// style="height:400px;width:400px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;" // scroll box
 
 }

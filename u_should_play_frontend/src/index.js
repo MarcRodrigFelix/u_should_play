@@ -1,5 +1,5 @@
 const newGameForm = document.getElementById('new-game-form');
-let eachGameDiv = document.getElementsByClassName("single-game-div")
+let eachGameDiv = document.getElementsByClassName("single-game-div");
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -42,8 +42,6 @@ function fetchAndRenderGames(){
         submitEditForm(editForm)  // send each edit form through
     }
 
-    // grabEachGameDiv(eachGameDiv)
-
   })
 };
 
@@ -81,21 +79,8 @@ e.preventDefault()
 function showEachGameComments(gameComments, gameId){
   let currentGameId = gameId
   let currentGame = document.querySelector(`[data-id="${parseInt(gameId)}"]`) // get game by game_id
-console.log(currentGame.getElementsByClassName('game-comments')[0])
   Array.from(gameComments).forEach( gameDiv => {
     let newComment = new Comment(gameDiv)
-    // console.log(newComment.renderCommentHTML)
-    currentGame.getElementsByClassName('game-comments')[0].innerHTML += newComment.renderCommentHTML()
-//     gameDiv.addEventListener("click", (e) => {
-// console.log(
-//     })
+    currentGame.getElementsByClassName('game-comments')[0].innerHTML += newComment.renderCommentHTML() // render a New Comment into game html
   })
 };
-
-
-// function grabEachGameDiv(eachGame){
-//   for (let i = 0; i < eachGame.length; i++){
-//    let div = eachGame[i].getElementsByClassName('game-comments')[0].innerHTML = "practice"
-//    console.log(div)
-//   }
-// }
