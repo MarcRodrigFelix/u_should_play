@@ -1,5 +1,5 @@
 const newGameForm = document.getElementById('new-game-form');
-// const eachGameDiv = document.getElementsByClassName('single-game-div')
+const eachGameDiv = document.getElementsByClassName('single-game-div')
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,17 +13,19 @@ function fetchAndRenderGames(){
     .then( gamesObj => {
       gamesObj.forEach( gameObject => {
       const newGame = new Game(gameObject) // create a new game with Game class
-      //const newGameComms = new Comment(newGame.gameComments[0]) // create a new comment with Comment class
+      // const newGameComms = new Comment(newGame.gameComments[0]) // create a new comment with Comment class
       document.getElementById('all-games').innerHTML += newGame.renderGameHTML();
+// console.log(newGameComms)
+      showEachGameComments(newGame.gameComments); // SEND THROUGH EACH GAME COMMENT TO MAKE A COMMENT CLASS AND RENDER HTML
     });
-// DELETE GAME EVENT LISTENER
-    document.querySelectorAll('.delete').forEach( game => {
+// console.log(gamesObj)
+    document.querySelectorAll('.delete').forEach( game => {   // DELETE GAME EVENT LISTENER
       game.addEventListener('click', (e) => {
         FetchGameApi.deleteGame(e.target.dataset.id)
       })
     });
-// TOGGLE HIDDEN CLASS FOR EDIT FORM EVENT LISTENER
-    document.querySelectorAll('.edit').forEach( editBtn => {
+
+    document.querySelectorAll('.edit').forEach( editBtn => {  // TOGGLE HIDDEN CLASS FOR EDIT FORM EVENT LISTENER
       editBtn.addEventListener('click', (e) => {
         if (e.target.parentNode.children[6].style.display === 'none'){
           e.target.parentNode.children[6].style.display = 'block'
@@ -32,12 +34,12 @@ function fetchAndRenderGames(){
         }
       })
     });
-// ITERATE THROUGH EACH EDIT FORM AND SUBMIT BUTTON
-const editForms = document.querySelectorAll('#edit-form');
 
+  const editForms = document.querySelectorAll('#edit-form');  // ITERATE THROUGH EACH EDIT FORM AND SUBMIT BUTTON
     for (let editForm of editForms){
-        submitEditForm(editForm) // send each edit form through
+        submitEditForm(editForm)  // send each edit form through
     }
+
   })
 };
 
@@ -58,7 +60,6 @@ function addNewGameFromForm(form){
 
 // listen to edit form submit button and PATCH game
 function submitEditForm(editForm){
-  console.log(editForm)
   editForm.addEventListener('submit', (e) => {
 e.preventDefault()
       const gameID = e.target.dataset.id
@@ -70,3 +71,18 @@ e.preventDefault()
       FetchGameApi.updateGame(gameID, editedGameData)
   })
 };
+
+
+
+function showEachGameComments(gameComments){
+  Array.from(gameComments).forEach( gameDiv => {
+    let newComment = new Comment(gameDiv)
+    console.log(`Comment: "${newComment.content}"`)
+    console.log(`Comment By: "${newComment.commentator}"`)
+    console.log(newComment.game_id)
+// console.log(gameComments)
+//     gameDiv.addEventListener("click", (e) => {
+// console.log(
+//     })
+  })
+}

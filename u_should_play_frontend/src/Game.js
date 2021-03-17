@@ -23,8 +23,13 @@ class Game{
         ${this.renderGameEditForm()}
       </div>
       <br>
-      <div>
-        <button class="comments" >Check Comments</button>
+      <div class="comments-section">
+        <div>
+          <button data-id=${this.id} class="comments-btn" > Open Comments</button>
+        </div>
+        <div class="game-comments">
+          <p>This is a TEST</p>
+        </div>
       </div>
       <br>
       <div style="border: 1px solid black; border-length: 25px;"></div>
