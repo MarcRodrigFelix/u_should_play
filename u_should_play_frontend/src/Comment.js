@@ -8,7 +8,7 @@ class Comment{
 
   renderCommentHTML(){
     return `
-    <div class=game-comments id=${this.game_id}>
+    <div id=${this.game_id}>
       <h4>${this.commentator}<h4>
       <p>${this.content}</p>
     </div>`

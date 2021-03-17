@@ -1,5 +1,5 @@
 const newGameForm = document.getElementById('new-game-form');
-const eachGameDiv = document.getElementsByClassName('single-game-div')
+let eachGameDiv = document.getElementsByClassName("single-game-div")
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,17 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
 function fetchAndRenderGames(){
   FetchGameApi.getGamesFetch()
     .then( gamesObj => {
       gamesObj.forEach( gameObject => {
       const newGame = new Game(gameObject) // create a new game with Game class
       // const newGameComms = new Comment(newGame.gameComments[0]) // create a new comment with Comment class
-      document.getElementById('all-games').innerHTML += newGame.renderGameHTML();
-// console.log(newGameComms)
-      showEachGameComments(newGame.gameComments); // SEND THROUGH EACH GAME COMMENT TO MAKE A COMMENT CLASS AND RENDER HTML
+      const renderGame = newGame.renderGameHTML()
+      document.getElementById('all-games').innerHTML += renderGame
+      // document.getElementById('all-games').innerHTML += newGame.renderGameHTML();\
+      showEachGameComments(newGame.gameComments, newGame.id); // SEND THROUGH EACH GAME COMMENT TO MAKE A COMMENT CLASS AND RENDER HTML
     });
-// console.log(gamesObj)
+
     document.querySelectorAll('.delete').forEach( game => {   // DELETE GAME EVENT LISTENER
       game.addEventListener('click', (e) => {
         FetchGameApi.deleteGame(e.target.dataset.id)
@@ -35,10 +37,12 @@ function fetchAndRenderGames(){
       })
     });
 
-  const editForms = document.querySelectorAll('#edit-form');  // ITERATE THROUGH EACH EDIT FORM AND SUBMIT BUTTON
+    const editForms = document.querySelectorAll('#edit-form');  // ITERATE THROUGH EACH EDIT FORM AND SUBMIT BUTTON
     for (let editForm of editForms){
         submitEditForm(editForm)  // send each edit form through
     }
+
+    // grabEachGameDiv(eachGameDiv)
 
   })
 };
@@ -74,15 +78,24 @@ e.preventDefault()
 
 
 
-function showEachGameComments(gameComments){
+function showEachGameComments(gameComments, gameId){
+  let currentGameId = gameId
+  let currentGame = document.querySelector(`[data-id="${parseInt(gameId)}"]`) // get game by game_id
+console.log(currentGame.getElementsByClassName('game-comments')[0])
   Array.from(gameComments).forEach( gameDiv => {
     let newComment = new Comment(gameDiv)
-    console.log(`Comment: "${newComment.content}"`)
-    console.log(`Comment By: "${newComment.commentator}"`)
-    console.log(newComment.game_id)
-// console.log(gameComments)
+    // console.log(newComment.renderCommentHTML)
+    currentGame.getElementsByClassName('game-comments')[0].innerHTML += newComment.renderCommentHTML()
 //     gameDiv.addEventListener("click", (e) => {
 // console.log(
 //     })
   })
-}
+};
+
+
+// function grabEachGameDiv(eachGame){
+//   for (let i = 0; i < eachGame.length; i++){
+//    let div = eachGame[i].getElementsByClassName('game-comments')[0].innerHTML = "practice"
+//    console.log(div)
+//   }
+// }

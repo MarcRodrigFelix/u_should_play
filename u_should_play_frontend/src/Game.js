@@ -27,8 +27,8 @@ class Game{
         <div>
           <button data-id=${this.id} class="comments-btn" > Open Comments</button>
         </div>
-        <div class="game-comments">
-          <p>This is a TEST</p>
+        <br>
+        <div data-id="${this.id}" class="game-comments">
         </div>
       </div>
       <br>
