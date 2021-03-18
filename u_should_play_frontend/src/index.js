@@ -51,13 +51,8 @@ function fetchAndRenderGames(){
       })
     })
 
-    // const newCommentForm = document.getElementById( 'new-comment-form' );
     const newCommentForm = document.querySelectorAll( '#new-comment-form' );
-    // newCommentForm.addEventListener( 'submit', (e) => submitNewComment(e) )
-    newCommentForm.forEach( form => {
-      console.log(form)
-    })
-    console.log( newCommentForm )
+    submitNewComment( newCommentForm )
   })
 };
 
@@ -105,8 +100,16 @@ e.preventDefault()
 
 
 
-function submitNewComment(e){
-  e.preventDefault()
-  // const gameID = 
-  console.log(e.target.parentNode)
+function submitNewComment(form){
+  form.forEach( commentData => {
+    commentData.addEventListener('submit', (e) => {
+        e.preventDefault()
+      const formData = new FormData( e.target )
+      const newCommData = {
+        content: formData.get( 'content' ),
+        commentator: formData.get( 'commentator' )
+      }
+console.log(newCommData)
+    })
+  })
 };

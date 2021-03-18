@@ -57,13 +57,11 @@ class Game{
 
 
   addNewComment(){
-    return `<br>
+    return `
     <form data-id="${this.id}" id="new-comment-form" >
       <input type="text" id="content" name="content" placeholder="content"><br>
       <br>
       <input type="text" id="commentator" name="commentator" placeholder="commentator"><br>
-      <br>
-      <!-- <input type="text" id="review" name="review" placeholder="Review"><br> -->
       <br>
       <input type="submit" value="Submit" name="submit" class="add-comm">
     </form>`
