@@ -29,7 +29,7 @@ class Game{
           <!-- <button class="comments-btn"> Open Comments </button> -->
           <button data-id=${this.id} class="add"> Add Comment </button>
           <div data-id=${this.id} style="display:none;">
-            ${Comment.addComment()}
+            ${this.addNewComment()}
           </div>
         </div>
         <br>
@@ -53,6 +53,22 @@ class Game{
         <br>
         <input type="submit" value="Submit" name="submit" class="edit-btn">
       </form>`
+  }
+
+
+  addNewComment(){
+    return `<br>
+    <div data-id=${this.id} id="new-comment-div">
+    <form id="new-comment-form" >
+      <input type="text" id="content" name="content" placeholder="content"><br>
+      <br>
+      <input type="text" id="commentator" name="commentator" placeholder="commentator"><br>
+      <br>
+      <!-- <input type="text" id="review" name="review" placeholder="Review"><br> -->
+      <br>
+      <input type="submit" value="Submit" name="submit" class="add-comm">
+    </form>
+    </div>`
   }
 
 

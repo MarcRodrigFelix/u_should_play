@@ -15,20 +15,20 @@ class Comment{
 
 
 
-  static addComment(game_id){
-    return `<br>
-    <div id="new-comment-div">
-    <form data-id="${game_id}" id="new-comment-form" >
-      <input type="text" id="content" name="content" placeholder="content"><br>
-      <br>
-      <input type="text" id="commentator" name="commentator" placeholder="commentator"><br>
-      <br>
-      <!-- <input type="text" id="review" name="review" placeholder="Review"><br> -->
-      <br>
-      <input type="submit" value="Submit" name="submit" class="add-comm">
-    </form>
-    </div>`
-  };
+  // static addComment(){
+  //   return `<br>
+  //   <div data-id=${this.game_id} id="new-comment-div">
+  //   <form id="new-comment-form" >
+  //     <input type="text" id="content" name="content" placeholder="content"><br>
+  //     <br>
+  //     <input type="text" id="commentator" name="commentator" placeholder="commentator"><br>
+  //     <br>
+  //     <!-- <input type="text" id="review" name="review" placeholder="Review"><br> -->
+  //     <br>
+  //     <input type="submit" value="Submit" name="submit" class="add-comm">
+  //   </form>
+  //   </div>`
+  // };
 
 
 }

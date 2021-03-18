@@ -8,16 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
   addNewGameFromForm(newGameForm);
 });
 
-
 function fetchAndRenderGames(){
   FetchGameApi.getGamesFetch()
     .then( gamesObj => {
       gamesObj.forEach( gameObject => {
       const newGame = new Game(gameObject) // create a new game with Game class
-      // const newGameComms = new Comment(newGame.gameComments[0]) // create a new comment with Comment class
       const renderGame = newGame.renderGameHTML()
       document.getElementById('all-games').innerHTML += renderGame
-      // document.getElementById('all-games').innerHTML += newGame.renderGameHTML();\
       showEachGameComments(newGame.gameComments, newGame.id); // SEND THROUGH EACH GAME COMMENT TO MAKE A COMMENT CLASS AND RENDER HTML
     });
 
@@ -52,22 +49,39 @@ function fetchAndRenderGames(){
         }
       })
     })
+
+    const newCommentForm = document.getElementById( 'new-comment-form' );
+    newCommentForm.addEventListener( 'submit', (e) => submitNewComment(e) )
+    // console.log( newCommentForm )
   })
 };
 
-console.log(addNewComment)
-// listen to form, and POST game
-function addNewGameFromForm(form){
-  form.addEventListener('submit', (e) => {
-    let formData = new FormData(e.target)
-    const gameData = {
-      title: formData.get('title'),
-      image: formData.get('image'),
-      review: formData.get('review')
-    }
-    FetchGameApi.postGamesFetch(gameData)
+
+
+function showEachGameComments( gameComments, gameId ){
+  let currentGameId = gameId
+  let currentGame = document.querySelector( `[data-id="${parseInt(gameId)}"]` ) // get game by game_id
+  Array.from( gameComments ).forEach( gameDiv => {
+    let newComment = new Comment( gameDiv )
+    currentGame.getElementsByClassName('game-comments')[0].innerHTML += newComment.renderCommentHTML() // render a New Comment into game html
   })
 };
+
+
+
+// listen to form, and POST game
+function addNewGameFromForm( form ){
+  form.addEventListener( 'submit', (e) => {
+    let formData = new FormData( e.target )
+    const gameData = {
+      title: formData.get( 'title' ),
+      image: formData.get( 'image' ),
+      review: formData.get( 'review' )
+    }
+    FetchGameApi.postGamesFetch( gameData )
+  })
+};
+
 
 
 // listen to edit form submit button and PATCH game
@@ -86,11 +100,8 @@ e.preventDefault()
 
 
 
-function showEachGameComments(gameComments, gameId){
-  let currentGameId = gameId
-  let currentGame = document.querySelector(`[data-id="${parseInt(gameId)}"]`) // get game by game_id
-  Array.from(gameComments).forEach( gameDiv => {
-    let newComment = new Comment(gameDiv)
-    currentGame.getElementsByClassName('game-comments')[0].innerHTML += newComment.renderCommentHTML() // render a New Comment into game html
-  })
+function submitNewComment(e){
+  e.preventDefault()
+  // const gameID = 
+  console.log(e.target.parentNode)
 };
