@@ -107,9 +107,10 @@ function submitNewComment(form){
       const formData = new FormData( e.target )
       const newCommentData = {
         content: formData.get( 'content' ),
-        commentator: formData.get( 'commentator' )
+        commentator: formData.get( 'commentator' ),
+        gameId: formData.get( 'gameId' )
       }
-// console.log(newCommData)
+console.log(newCommentData)
       Comment.postCommentFetch(newCommentData)
     })
   })

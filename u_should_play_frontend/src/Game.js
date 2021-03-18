@@ -63,6 +63,7 @@ class Game{
       <br>
       <input type="text" id="commentator" name="commentator" placeholder="commentator"><br>
       <br>
+      <input type="hidden" id="gameId" name="gameId" value="${this.id}">
       <input type="submit" value="Submit" name="submit" class="add-comm">
     </form>`
   }

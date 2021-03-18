@@ -12,5 +12,14 @@ class CommentsController < ApplicationController
     game = Game.find_by(id: comment.game_id)
     render json: game
   end
+
+  def create
+    comment = Comment.new(content: params['content'], commentator: params['commentator'])
+    if comment.save
+      render json: comment, status: :accepted
+    else
+      render json: {errors: comment.errors.full_messages}, status: :unprocessible_entity
+    end
+  end
   
 end
