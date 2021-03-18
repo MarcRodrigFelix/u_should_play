@@ -6,7 +6,7 @@ class Comment{
   }
 
   static postCommentFetch(formData){
-    fetch('http://localhost:3000/comments', {
+    fetch("http://localhost:3000/comments", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ class Comment{
     .then( resp => resp.json())
   }
 
-  
+
 
   renderCommentHTML(){
     return `
