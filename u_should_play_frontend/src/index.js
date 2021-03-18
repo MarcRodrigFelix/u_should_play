@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   addNewGameFromForm(newGameForm);
 });
 
+
 function fetchAndRenderGames(){
   FetchGameApi.getGamesFetch()
     .then( gamesObj => {
@@ -50,9 +51,13 @@ function fetchAndRenderGames(){
       })
     })
 
-    const newCommentForm = document.getElementById( 'new-comment-form' );
-    newCommentForm.addEventListener( 'submit', (e) => submitNewComment(e) )
-    // console.log( newCommentForm )
+    // const newCommentForm = document.getElementById( 'new-comment-form' );
+    const newCommentForm = document.querySelectorAll( '#new-comment-form' );
+    // newCommentForm.addEventListener( 'submit', (e) => submitNewComment(e) )
+    newCommentForm.forEach( form => {
+      console.log(form)
+    })
+    console.log( newCommentForm )
   })
 };
 
