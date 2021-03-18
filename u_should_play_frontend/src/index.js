@@ -105,11 +105,12 @@ function submitNewComment(form){
     commentData.addEventListener('submit', (e) => {
         e.preventDefault()
       const formData = new FormData( e.target )
-      const newCommData = {
+      const newCommentData = {
         content: formData.get( 'content' ),
         commentator: formData.get( 'commentator' )
       }
-console.log(newCommData)
+// console.log(newCommData)
+      Comment.postCommentFetch(newCommentData)
     })
   })
 };

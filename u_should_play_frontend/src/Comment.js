@@ -5,6 +5,19 @@ class Comment{
     this.game_id = commentObject.game_id
   }
 
+  static postCommentFetch(formData){
+    fetch('http://localhost:3000/comments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then( resp => resp.json())
+  }
+
+  
 
   renderCommentHTML(){
     return `
