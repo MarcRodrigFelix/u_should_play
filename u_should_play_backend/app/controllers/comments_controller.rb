@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    comment = Comment.new(content: params['content'], commentator: params['commentator'])
+    comment = Comment.new(content: params['content'], commentator: params['commentator'], gameID: params['gameID'])
     if comment.save
       render json: comment, status: :accepted
     else
