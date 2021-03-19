@@ -27,10 +27,11 @@ function fetchAndRenderGames(){
 
     document.querySelectorAll('.edit').forEach( editBtn => {  // TOGGLE HIDDEN CLASS FOR EDIT FORM EVENT LISTENER
       editBtn.addEventListener('click', (e) => {
-        if (e.target.parentNode.children[6].style.display === 'none'){
-          e.target.parentNode.children[6].style.display = 'block'
+console.log(e.target.parentNode.parentNode.children[1])
+        if (e.target.parentNode.parentNode.children[1].style.display === 'none'){
+          e.target.parentNode.parentNode.children[1].style.display = 'block'
         } else {
-          e.target.parentNode.children[6].style.display = 'none'
+          e.target.parentNode.parentNode.children[1].style.display = 'none'
         }
       })
     });

@@ -13,30 +13,30 @@ class Game{
 
   renderGameHTML(){
     return `
-    <div style="border: 1px solid black; border-length: 25px;"></div>
-    <div data-id=${this.id} class="single-game-div">
-      <h3>${this.title}</h3>
-      <img src=${this.image} style="width: 350px">
-      <p>${this.review}</p>
-      || <button data-id=${this.id} class="delete"> Delete ${this.title}</button> || <button data-id=${this.id} class="edit" >Edit</button> ||
-      <br>
-      <div id="${this.id}" class="hidden"  style="display:none;">
-        ${this.renderGameEditForm()}
+    <div data-id=${this.id} class="single-game-div" style="background-color: #FCA5A5; width: 100%;">
+
+      <div class="game-info-section" style="width: 30%;">
+        <h3>${this.title}</h3>
+        <img src=${this.image} style="width: 350px">
+        <p>${this.review}</p>
+        || <button data-id=${this.id} class="delete"> Delete ${this.title} </button> || <button class="edit" >Edit</button> ||
       </div>
-      <br>
-      <div class="comments-section">
-        <div>
-          <!-- <button class="comments-btn"> Open Comments </button> -->
+
+      <div class="edit-section" style="width: 30%; display:none;">
+        <div id="${this.id}">
+          ${this.renderGameEditForm()}
+        </div>
+      </div>
+        
+      <div class="comments-section" style="width: 30%;">
           <button data-id=${this.id} class="add"> Add Comment </button>
           <div data-id=${this.id} style="display:none;">
             ${this.addNewComment()}
           </div>
-        </div>
-        <br>
         <div data-id="${this.id}" class="game-comments">
         </div>
       </div>
-      <br>
+      --------------------------------------------------------------------------------
     </div>`
   }
 
@@ -67,23 +67,6 @@ class Game{
       <input type="submit" value="Submit" name="submit" class="add-comm">
     </form>`
   }
-
-
-  // renderComments(gameComments){
-  //   return `
-  //     <p><bold>Comment</bold>: ${gameComments[0].content}. By: ${gameComments[0].commentator}.</p>`
-  // }
-// passes each game comment through to render in HTML
-//   renderEachGameComment(commentsArrayObj){
-//     return commentsArrayObj.forEach( commentObj => {
-//       const newComm = new Comment(commentObj)
-// // console.log(newComm)
-//       return newComm.renderCommentHTML()
-//     })
-//   }
-
-
-
 
 
 // style="height:400px;width:400px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;" // scroll box
