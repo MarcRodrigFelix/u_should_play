@@ -13,22 +13,19 @@ class Game{
 
   renderGameHTML(){
     return `
-    <div data-id=${this.id} class="single-game-div" style="background-color: #FCA5A5; width: 100%;">
+    <div data-id=${this.id} class="single-game-div flex space-x-4 my-4 ..." style="background-color: #FCA5A5;">
 
-      <div class="game-info-section" style="width: 30%;">
+      <div class="game-info-section flex-1 ..." >
         <h3>${this.title}</h3>
         <img src=${this.image} style="width: 350px">
         <p>${this.review}</p>
-        || <button data-id=${this.id} class="delete"> Delete ${this.title} </button> || <button class="edit" >Edit</button> ||
-      </div>
-
-      <div class="edit-section" style="width: 30%; display:none;">
-        <div id="${this.id}">
+        <button data-id=${this.id} class="delete"> Delete ${this.title} </button> <button class="edit" >Edit</button>
+        <div class="edit-section" style="display: none;">
           ${this.renderGameEditForm()}
         </div>
       </div>
         
-      <div class="comments-section" style="width: 30%;">
+      <div class="comments-section flex-1 ...">
           <button data-id=${this.id} class="add"> Add Comment </button>
           <div data-id=${this.id} style="display:none;">
             ${this.addNewComment()}
@@ -36,14 +33,12 @@ class Game{
         <div data-id="${this.id}" class="game-comments">
         </div>
       </div>
-      --------------------------------------------------------------------------------
     </div>`
   }
 
 
   renderGameEditForm(){
     return `
-    <br>
       <form data-id="${this.id}" id="edit-form">
         <input type="text" id="title" name="title" value="${this.title}" placeholder="Title"><br>
         <br>
