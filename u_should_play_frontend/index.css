@@ -62,7 +62,7 @@ body{
   margin: auto;
   margin-top: 35px;
   margin-bottom: 35px;
-  height: auto;
+  height: 800px;
   border:1px solid black;
 }
 
@@ -95,4 +95,5 @@ body{
   border-radius: 10px;
   font:16px/26px Georgia, Garamond, Serif;
   overflow: auto;
+  cursor: all-scroll;
 }
