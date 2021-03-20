@@ -55,6 +55,9 @@ body{
 
 /* CLASS ================================================ */
 
-/* .single-game-div{
-
-} */
+.single-game-div{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 25px;
+  background-color: darksalmon;
+}
