@@ -3,6 +3,31 @@
   text-align: center;
 } 
 
+
+/* ID ================================================ */
+
+#new-game-form{
+  background-color: darkgoldenrod;
+  margin: auto;
+  padding: 25px;
+}
+
+#edit-form{
+  background-color: darkgoldenrod;
+  margin: auto;
+  padding: 25px;
+}
+
+#new-comment-form{
+  background-color: darkgoldenrod;
+  margin: auto;
+  padding: 25px;
+}
+
+
+
+
+/* CLASS ================================================ */
 /* .main-body{
   width: 100%;
 } */

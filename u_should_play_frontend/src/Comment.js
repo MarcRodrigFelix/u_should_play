@@ -23,27 +23,9 @@ class Comment{
     return `
     <div>
       <span><h4>By:<h4>${this.commentator}</span>
-      <p><h4>Comment:</h4>"${this.content}"</p>
+      <p><h4>Comment:</h4>"${this.content}" <button class="x-btn">X</button></p>
     </div>
     `
   }
-
-
-
-  // static addComment(){
-  //   return `<br>
-  //   <div data-id=${this.game_id} id="new-comment-div">
-  //   <form id="new-comment-form" >
-  //     <input type="text" id="content" name="content" placeholder="content"><br>
-  //     <br>
-  //     <input type="text" id="commentator" name="commentator" placeholder="commentator"><br>
-  //     <br>
-  //     <!-- <input type="text" id="review" name="review" placeholder="Review"><br> -->
-  //     <br>
-  //     <input type="submit" value="Submit" name="submit" class="add-comm">
-  //   </form>
-  //   </div>`
-  // };
-
 
 }

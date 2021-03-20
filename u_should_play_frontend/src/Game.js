@@ -14,7 +14,7 @@ class Game{
 
   renderGameHTML(){
     return `
-    <div data-id=${this.id} class="single-game-div block table w-full ..." style="background-color: #white;">
+    <div data-id=${this.id} class="single-game-div" style="background-color: #white;">
 
       <div class="game-info-section" >
         <div class="inner-game-section">
@@ -25,7 +25,7 @@ class Game{
             <button data-id=${this.id} class="delete"> Delete ${this.title} </button>
             <button class="edit" >Edit</button> 
           </div>
-          <div class="edit-section" style="display: none;" class="table-cell ...">
+          <div class="edit-section" style="display: none;">
             ${this.renderGameEditForm()}
           </div>
         </div>
