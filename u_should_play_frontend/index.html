@@ -14,16 +14,16 @@
       <form id="new-game-form">
         <h2>Add A Game, You Should Play.</h2>
         <div class="game-box">
-          <label for="title">Game Title</label><br>
-          <input type="text" id="title" name="title"><br>
+          <input type="text" name="title" required="">
+          <label>Title</label>
         </div>
         <div class="game-box">
-          <label for="image">Game Image</label><br>
-          <input type="text" id="image" name="image"><br>
+          <input type="text" name="image" required="">
+          <label>Image URL</label>
         </div>
         <div class="game-box">
-          <label for="review">Game Review</label><br>
-          <input type="text" id="review" name="review"><br>
+          <textarea type="tex" id="review" name="review" cols="40" rows="5" required=""></textarea>
+          <label>Why Should This Game Be Played?</label>
         </div>
         <div class="submit-btn">
           <span></span>

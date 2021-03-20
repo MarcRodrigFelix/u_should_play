@@ -1,7 +1,7 @@
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   align-content: center;
-  text-align: center;
+  /* text-align: center; */
 
 }
 /* htmlTags ================================================ */
@@ -25,7 +25,6 @@ body{
 }
 
 #game-form-div{
-  /* background-color: #FE5F55; */
   width: 850px;
   padding: 15px;
   margin: auto;
@@ -38,19 +37,18 @@ body{
 }
 
 #new-game-form{
-  /* background-color: darkgoldenrod; */
   margin: 50px auto;
   padding: 50px 25px;
-    /* position: absolute; */
-    /* top: 50%; */
-    /* left: 50%; */
-    /* width: 400px; */
-    /* padding: 40px; */
-    /* transform: translate(-50%, -50%); */
-    background: rgba(0,0,0,.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 50%; */
+  width: 400px;
+  padding: 40px;
+  /* transform: translate(-50%, -50%); */
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
 }
 #new-game-form h2 {
   margin: 0 0 30px;
@@ -82,8 +80,26 @@ body{
   pointer-events: none;
   transition: .5s;
 }
+#new-game-form .game-box textarea {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
 #new-game-form .game-box input:focus ~ label,
 #new-game-form .game-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+#new-game-form .game-box textarea:focus ~ label,
+#new-game-form .game-box textarea:valid ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
@@ -157,7 +173,6 @@ body{
   animation: btn-anim3 1s linear infinite;
   animation-delay: .5s
 }
-
 @keyframes btn-anim3 {
   0% {
     right: -100%;
@@ -217,8 +232,9 @@ body{
   margin: auto;
   margin-top: 35px;
   margin-bottom: 75px;
-  height: auto;
-  background-color: white;
+  height: 850px;
+  /* max-height: 900px; */
+  /* background-color: white; */
   /* border:1px solid black; */
 }
 
