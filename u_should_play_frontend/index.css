@@ -56,7 +56,7 @@ body{
 /* CLASS ================================================ */
 
 .single-game-div{
-  width: 80%;
+  width: 100%;
   padding: 10px;
   background-color: blue;
   margin: auto;
@@ -67,14 +67,17 @@ body{
 .game-info-section{
   width: 50%;
   float: left;
-  background-color: red;
+  /* background-color: red; */
   height: 100%;
+  padding: 15px;
 }
 
 
 .comments-section{
   margin-left: 50%;
-  height: 500px;
-  background-color: white;
-  height: 100%;
+  /* height: 400px; */
+  /* background-color: white; */
+  height: 70%;
+  margin-top: 125px;
+  padding: 15px;
 }

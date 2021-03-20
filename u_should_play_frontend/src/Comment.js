@@ -22,8 +22,8 @@ class Comment{
   renderCommentHTML(){
     return `
     <div>
-      <span><h4>By:<h4>${this.commentator}</span>
-      <p><h4>Comment:</h4>"${this.content}" <button class="x-btn">X</button></p>
+      <h4>${this.commentator}: </h4>
+      <p>"${this.content}" <button class="x-btn">X</button></p>
     </div>
     `
   }

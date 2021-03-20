@@ -32,6 +32,7 @@ class Game{
       </div>
         
       <div class="comments-section">
+          <h3>${this.title} Comments:</h3><br><br><br>
           <button data-id=${this.id} class="add"> Add Comment </button>
           <div data-id=${this.id} style="display:none;">
             ${this.addNewComment()}
