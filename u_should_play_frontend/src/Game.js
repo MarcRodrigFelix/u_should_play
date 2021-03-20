@@ -37,7 +37,7 @@ class Game{
             ${this.addNewComment()}
           </div>
         <div data-id="${this.id}" class="game-comments">
-        <h4>${this.title} Comments</h4>
+          <h4>${this.title} Comments</h4>
         </div>
       </div>
     </div>`

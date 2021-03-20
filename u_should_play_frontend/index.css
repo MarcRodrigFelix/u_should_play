@@ -81,3 +81,12 @@ body{
   margin-top: 2px;
   padding: 15px;
 }
+
+
+.game-comments{
+  height: 325px;
+  /* width:400px; */
+  border:1px solid #ccc;
+  font:16px/26px Georgia, Garamond, Serif;
+  overflow:auto;
+}
