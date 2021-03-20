@@ -5,7 +5,7 @@
 }
 /* htmlTags ================================================ */
 body{
-  background-color: #D1D5DB;
+  background-color: #EEF5DB;
   width: 1200px;
   margin: auto;
 }
@@ -14,13 +14,13 @@ body{
 /* ID ================================================ */
 
 #main-div{
-  background-color: white;
+  background-color: #FE5F55;
   /* width: 1000px; */
   margin: auto;
 }
 
 #game-form-div{
-  background-color: rgba(255, 0, 0, 0.486);
+  background-color: #B8D8D8;
   width: 850px;
   padding: 15px;
   margin: auto;
@@ -60,9 +60,10 @@ body{
   padding: 10px;
   /* background-color: blue; */
   margin: auto;
+  margin-top: 35px;
+  margin-bottom: 35px;
   height: auto;
   border:1px solid black;
-
 }
 
 
@@ -89,7 +90,7 @@ body{
 .game-comments{
   height: 300px;
   /* width: 300px; */
-  background-color: white;
+  background-color: #B8D8D8;
   /* border:1px solid black; */
   border-radius: 10px;
   font:16px/26px Georgia, Garamond, Serif;
