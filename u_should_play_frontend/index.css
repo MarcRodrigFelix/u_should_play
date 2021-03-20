@@ -56,8 +56,25 @@ body{
 /* CLASS ================================================ */
 
 .single-game-div{
-  width: 100%;
-  box-sizing: border-box;
-  padding: 25px;
-  background-color: darksalmon;
+  width: 80%;
+  padding: 10px;
+  background-color: blue;
+  margin: auto;
+  height: 600px;
+}
+
+
+.game-info-section{
+  width: 50%;
+  float: left;
+  background-color: red;
+  height: 100%;
+}
+
+
+.comments-section{
+  margin-left: 50%;
+  height: 500px;
+  background-color: white;
+  height: 100%;
 }
