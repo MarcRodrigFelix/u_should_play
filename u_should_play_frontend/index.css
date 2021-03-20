@@ -1,16 +1,28 @@
 * {
+  box-sizing: border-box;
   align-content: center;
   text-align: center;
 }
 /* htmlTags ================================================ */
 body{
   background-color: #D1D5DB;
-  width: 1000px;
+  width: 1200px;
   margin: auto;
 }
 
 
 /* ID ================================================ */
+
+#main-div{
+  background-color: black;
+  width: 1000px;
+  margin: auto;
+}
+
+#game-form-div{
+  background-color: blue;
+  padding: 15px;
+}
 
 #new-game-form{
   background-color: darkgoldenrod;
@@ -34,21 +46,7 @@ body{
 
 
 /* CLASS ================================================ */
-/* .main-body{
-  width: 100%;
-} */
 
-/* .hidden{
-  display: none;
-} */
+/* .single-game-div{
 
-/* 
-#all-games{
-  background-color: aquamarine;
-  width: 40%;
-}
-
-#game-comments{
-  background-color: bisque;
-  width: 40%
 } */
