@@ -1,7 +1,13 @@
 * {
   align-content: center;
   text-align: center;
-} 
+}
+/* htmlTags ================================================ */
+body{
+  background-color: #D1D5DB;
+  width: 1000px;
+  margin: auto;
+}
 
 
 /* ID ================================================ */
