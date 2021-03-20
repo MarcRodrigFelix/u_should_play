@@ -11,21 +11,27 @@ class Game{
   }
 
 
+
   renderGameHTML(){
     return `
-    <div data-id=${this.id} class="single-game-div flex space-x-4 my-4 ..." style="background-color: #FCA5A5;">
+    <div data-id=${this.id} class="single-game-div block table w-full ..." style="background-color: #white;">
 
-      <div class="game-info-section flex-1 ..." >
-        <h3>${this.title}</h3>
-        <img src=${this.image} style="width: 350px">
-        <p>${this.review}</p>
-        <button data-id=${this.id} class="delete"> Delete ${this.title} </button> <button class="edit" >Edit</button>
-        <div class="edit-section" style="display: none;">
-          ${this.renderGameEditForm()}
+      <div class="game-info-section" >
+        <div class="inner-game-section">
+          <div>
+            <h2>${this.title}</h2>
+            <img src=${this.image} style="width: 260px" >
+            <p>${this.review}</p>
+            <button data-id=${this.id} class="delete"> Delete ${this.title} </button>
+            <button class="edit" >Edit</button> 
+          </div>
+          <div class="edit-section" style="display: none;" class="table-cell ...">
+            ${this.renderGameEditForm()}
+          </div>
         </div>
       </div>
         
-      <div class="comments-section flex-1 ...">
+      <div class="comments-section">
           <button data-id=${this.id} class="add"> Add Comment </button>
           <div data-id=${this.id} style="display:none;">
             ${this.addNewComment()}
