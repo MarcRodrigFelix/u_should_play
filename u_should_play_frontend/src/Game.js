@@ -18,10 +18,12 @@ class Game{
 
       <div class="game-info-section" >
         <div class="inner-game-section">
-          <div>
+          <div class="game-info">
             <h2>${this.title}</h2>
             <img src=${this.image} style="width: 260px" >
             <p>${this.review}</p>
+          </div>
+          <div class="btns">
             <button data-id=${this.id} class="delete"> Delete ${this.title} </button>
             <button class="edit" >Edit</button> 
           </div>

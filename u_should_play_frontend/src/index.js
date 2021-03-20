@@ -27,11 +27,12 @@ function fetchAndRenderGames(){
 
     document.querySelectorAll('.edit').forEach( editBtn => {  // TOGGLE HIDDEN CLASS FOR EDIT FORM EVENT LISTENER
       editBtn.addEventListener('click', (e) => {
-console.log(e.target.parentNode.parentNode.children[1])
-        if (e.target.parentNode.parentNode.children[1].style.display === 'none'){
-          e.target.parentNode.parentNode.children[1].style.display = 'block'
+// console.log(e.target.parentNode.parentNode.children[2])
+// e.preventDefault()
+        if (e.target.parentNode.parentNode.children[2].style.display === 'none'){
+          e.target.parentNode.parentNode.children[2].style.display = 'block'
         } else {
-          e.target.parentNode.parentNode.children[1].style.display = 'none'
+          e.target.parentNode.parentNode.children[2].style.display = 'none'
         }
       })
     });
@@ -88,7 +89,7 @@ function addNewGameFromForm( form ){
 // listen to edit form submit button and PATCH game
 function submitEditForm(editForm){
   editForm.addEventListener('submit', (e) => {
-e.preventDefault()
+  e.preventDefault()
       const gameID = e.target.dataset.id
       const editedGameData = {
         title: e.target.title.value,
@@ -111,7 +112,6 @@ function submitNewComment(form){
         commentator: formData.get( 'commentator' ),
         gameID: formData.get( 'gameID' )
       }
-console.log(newCommentData)
       Comment.postCommentFetch(newCommentData)
     })
   })
