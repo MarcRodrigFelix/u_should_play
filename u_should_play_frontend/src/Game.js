@@ -14,7 +14,7 @@ class Game{
 
   renderGameHTML(){
     return `
-    <div data-id=${this.id} class="single-game-div" style="background-color: #white;">
+    <div data-id=${this.id} class="single-game-div" ">
 
       <div class="game-info-section" >
         <div class="inner-game-section">

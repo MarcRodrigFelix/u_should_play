@@ -20,7 +20,7 @@ body{
 }
 
 #game-form-div{
-  background-color: blue;
+  background-color: rgba(255, 0, 0, 0.486);
   width: 850px;
   padding: 15px;
   margin: auto;
@@ -33,13 +33,13 @@ body{
 }
 
 #new-game-form{
-  background-color: darkgoldenrod;
+  /* background-color: darkgoldenrod; */
   margin: auto;
   padding: 25px;
 }
 
 #edit-form{
-  background-color: darkgoldenrod;
+  /* background-color: darkgoldenrod; */
   margin: auto;
   padding: 25px;
 }
@@ -58,9 +58,11 @@ body{
 .single-game-div{
   width: 100%;
   padding: 10px;
-  background-color: blue;
+  /* background-color: blue; */
   margin: auto;
-  height: 600px;
+  height: auto;
+  border:1px solid black;
+
 }
 
 
@@ -69,7 +71,8 @@ body{
   float: left;
   /* background-color: red; */
   height: 100%;
-  padding: 15px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 
@@ -79,14 +82,16 @@ body{
   /* background-color: white; */
   /* height: 100%; */
   margin-top: 2px;
-  padding: 15px;
+  padding: 30px;
 }
 
 
 .game-comments{
-  height: 325px;
-  /* width:400px; */
-  border:1px solid #ccc;
+  height: 300px;
+  /* width: 300px; */
+  background-color: white;
+  /* border:1px solid black; */
+  border-radius: 10px;
   font:16px/26px Georgia, Garamond, Serif;
-  overflow:auto;
+  overflow: auto;
 }
