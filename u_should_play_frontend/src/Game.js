@@ -38,7 +38,7 @@ class Game{
         
       <div class="comments-section">
         <div class="add-comment">
-          <h3>Add Comments:</h3>
+          <h3>Add Comments</h3>
             ${this.addNewComment()}
         </div>
         <div data-id="${this.id}" class="game-comments">
@@ -67,12 +67,22 @@ class Game{
   addNewComment(){
     return `
     <form data-id="${this.id}" id="new-comment-form" >
-      <input type="text" id="content" name="content" placeholder="content"><br>
-      <br>
-      <input type="text" id="commentator" name="commentator" placeholder="commentator"><br>
-      <br>
-      <input type="hidden" id="gameID" name="gameID" value="${this.id}">
-      <input type="submit" value="Submit" name="submit" class="add-comm">
+      <div class="game-box">
+        <input type="text" name="content" required="">
+        <label>Comment</label>
+      </div>
+      <div class="game-box">
+        <input type="text"  name="commentator" required="">
+        <label>Author</label>
+      </div>
+      <input type="hidden" name="gameID" value="${this.id}">
+      <div class="submit-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        <input type="submit" value="Submit" name="submit" class="add-comm">
+      </div>
     </form>`
   }
 

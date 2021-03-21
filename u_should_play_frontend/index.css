@@ -235,6 +235,133 @@ body{
   padding: 25px;
   padding-top: 5px;
 }
+#new-comment-form .game-box{
+  position: relative;
+}
+#new-comment-form .game-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+#new-comment-form .game-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+#new-comment-form .game-box input:focus ~ label,
+#new-comment-form .game-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+#new-comment-form .submit-btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+#new-comment-form .submit-btn:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+#new-comment-form .submit-btn span {
+  position: absolute;
+  display: block;
+}
+#new-comment-form .submit-btn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+#new-comment-form .submit-btn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+#new-comment-form .submit-btn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+#new-comment-form .submit-btn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+
+
 
 
 
@@ -246,19 +373,20 @@ body{
   padding: 50px;
 }
 .inner-game-section img{
+  padding: 75px 0;
   margin: 25px;
 }
 .inner-game-section p{
   text-align: justify;
 }
-.inner-game-btns{
+/* .inner-game-btns{
 
-}
+} */
 
 
 .single-game-div{
   width: 1000px;
-  min-height: 650px;
+  /* min-height: 650px; */
   margin: 150px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -358,14 +486,25 @@ body{
 
 .btns{
   margin: auto;
-  padding: 25px;
+  padding-top: 65px;
   width: 335px;
+  font-size: 16px;
   /* background: linear-gradient(#141e30, #243b55);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
   border-radius: 10px; */
 }
 .btns button{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.add-comm{
   background: none;
 	color: inherit;
 	border: none;
