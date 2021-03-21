@@ -27,12 +27,12 @@ function fetchAndRenderGames(){
 
     document.querySelectorAll('.edit').forEach( editBtn => {  // TOGGLE HIDDEN CLASS FOR EDIT FORM EVENT LISTENER
       editBtn.addEventListener('click', (e) => {
-// console.log(e.target.parentNode.parentNode.children[2])
-// e.preventDefault()
-        if (e.target.parentNode.parentNode.children[2].style.display === 'none'){
-          e.target.parentNode.parentNode.children[2].style.display = 'block'
+console.log(e.target.parentNode.parentNode.children[1])
+e.preventDefault()
+        if (e.target.parentNode.parentNode.children[1].style.display === 'none'){
+          e.target.parentNode.parentNode.children[1].style.display = 'block'
         } else {
-          e.target.parentNode.parentNode.children[2].style.display = 'none'
+          e.target.parentNode.parentNode.children[1].style.display = 'none'
         }
       })
     });
@@ -74,6 +74,7 @@ function showEachGameComments( gameComments, gameId ){
 // listen to form, and POST game
 function addNewGameFromForm( form ){
   form.addEventListener( 'submit', (e) => {
+e.preventDefault()
     let formData = new FormData( e.target )
     const gameData = {
       title: formData.get( 'title' ),
@@ -89,7 +90,8 @@ function addNewGameFromForm( form ){
 // listen to edit form submit button and PATCH game
 function submitEditForm(editForm){
   editForm.addEventListener('submit', (e) => {
-  e.preventDefault()
+e.preventDefault()
+console.log(e.target.parentNode)
       const gameID = e.target.dataset.id
       const editedGameData = {
         title: e.target.title.value,
@@ -105,7 +107,6 @@ function submitEditForm(editForm){
 function submitNewComment(form){
   form.forEach( commentData => {
     commentData.addEventListener('submit', (e) => {
-        e.preventDefault()
       const formData = new FormData( e.target )
       const newCommentData = {
         content: formData.get( 'content' ),

@@ -27,8 +27,20 @@ class Game{
 
         <div class="inner-game-btns">
           <div class="btns">
-            <button data-id=${this.id} class="delete"> Delete ${this.title} </button>
-            <button class="edit" >Edit</button> 
+            <div class="submit-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <button data-id=${this.id} class="delete"> Delete ${this.title} </button>
+            </div>
+            <div class="submit-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <button class="edit" >Edit</button>
+            </div>
           </div>
           <div class="edit-section" style="display: none;">
             ${this.renderGameEditForm()}
