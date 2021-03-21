@@ -25,23 +25,29 @@ Welcom to U Should Play. This is a web app for game lovers of all kind, where yo
 
 ## Installation
   Download repo and try locally. Clone the repo and run - # backend folder
+
     $ bundle install
   
   If required to run migration locally # backend folder
+
     $ rails db:migrate
 
   Run seed data for testing # backend folder
+
     $ rails db:seed
 
   Test data in rails console # backend folder
+
     $ rails console
     $ rails c
 
   Run local server (JSON data from Backend API) # backend folder
+
     $ rails server
     $ rails s
   
-  Open html page to view Single Page Application (SPA) - # frontend folder
+  Open html page to view Single Page Application (SPA) - * frontend folder
+
     $ open index.html
   
 
