@@ -265,7 +265,6 @@ body{
   padding-left: 12px;
   padding-right: 12px;
   border-radius: 20px;
-  background-color: seashell;
 }
 
 
@@ -277,6 +276,7 @@ body{
 }
 
 .add-comment{
+  border-radius: 20px;
   -webkit-box-shadow: 5px 5px 15px 5px #000000; 
   box-shadow: 5px 5px 15px 5px #000000;
   padding: 10px;
@@ -293,13 +293,17 @@ body{
   /* margin-left: 55%; */
 }
 
+.game-comments div{
+  border-bottom: 1px solid #fff;
+}
+
 .game-info{
   margin: 15px auto;
   padding: 30px;
   border-radius: 20px;
   color: #243b55;
-  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-  box-shadow: 5px 5px 15px 5px #000000;
+  /* -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+  box-shadow: 5px 5px 15px 5px #000000; */
 }
 
 .submit{
@@ -314,6 +318,8 @@ body{
 
 .btns{
   margin: auto;
+  padding: 25px;
+  width: 335px;
   -webkit-box-shadow: 5px 5px 15px 5px #000000; 
   box-shadow: 5px 5px 15px 5px #000000;
   border-radius: 20px;

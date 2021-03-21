@@ -24,7 +24,6 @@ class Comment{
     <div>
       <p>${this.commentator}:</p>
       <p>"${this.content}"</p>
-      <p>--------------------------------</p>
     </div>
     `
   }
