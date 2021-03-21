@@ -57,15 +57,29 @@ class Game{
   renderGameEditForm(){
     return `
     <div class="modal-content">
+
       <form data-id="${this.id}" id="edit-form"">
-        <input type="text" id="title" name="title" value="${this.title}" placeholder="Title">
-        <br>
-        <input type="text" id="image" name="image" value="${this.image}" placeholder="Image">
-        <br>
-        <input type="text" id="review" name="review" value="${this.review}" placeholder="Review">
-        <br>
-        <input type="submit" value="Submit" name="submit" class="edit-btn">
+        <div class="game-box">
+          <input type="text" id="title" name="title">
+          <label>Edit Title</label>
+        </div>
+        <div class="game-box">
+          <input type="text" id="image" name="image">
+          <label>Edit Image URL</label>
+        </div>
+        <div class="game-box">
+          <textarea type="text" id="review" name="review" ></textarea>
+          <label>Edit Reason</label>
+        </div>
+        <div class="submit-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <input type="submit" value="Submit" name="submit" class="edit-btn">
+        </div>
       </form>
+
       <button class="close-modal">Close</button>
     </div>`
   }

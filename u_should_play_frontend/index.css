@@ -223,7 +223,7 @@ body{
   margin: auto;
   /* padding: 20px; */
   /* border: 1px solid #888; */
-  width: auto; /* Could be more or less, depending on screen size */
+  width: 40%; /* Could be more or less, depending on screen size */
   color: black;
 }
 
@@ -548,15 +548,6 @@ body{
               0 0 100px #03e9f4;
 }
 
-.x{
-  background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-}
 /* .submit-btn span {
   position: absolute;
   display: block;
@@ -641,16 +632,18 @@ body{
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4)
+} 
 
 .modal-content {
-  background-color: #fefefe;
+  /* background: linear-gradient(#141e30, #243b55); */
+  background: rgba(0,0,0,.5);
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 40%; /* Could be more or less, depending on screen size */
+  border-radius: 10px;
 }
 
 .close-modal {
@@ -664,4 +657,82 @@ body{
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+
+
+#edit-form .game-box{
+  position: relative;
+}
+#edit-form .game-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+#edit-form .game-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+#edit-form .game-box input:focus ~ label,
+#edit-form .game-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+#edit-form .game-box textarea {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+#edit-form .game-box textarea:focus ~ label,
+#edit-form .game-box textarea:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+#edit-form .submit-btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+#edit-form .submit-btn:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+#edit-form .submit-btn span {
+  position: absolute;
+  display: block;
 }
