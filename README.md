@@ -24,47 +24,44 @@ Welcom to U Should Play. This is a web app for game lovers of all kind, where yo
  * Don't require signups or logins.
 
 ## Installation
-  Download repo and try locally. Clone the repo and run - # backend folder
+  Download repo and try locally. Clone the repo and run 
+    * backend folder
 
     $ bundle install
   
-  If required to run migration locally # backend folder
+  If required to run migration locally
+    * backend folder
 
     $ rails db:migrate
 
-  Run seed data for testing # backend folder
+  Run seed data for testing
+    * backend folder
 
     $ rails db:seed
 
-  Test data in rails console # backend folder
-
+  Test data in rails console
+    * backend folder
+    
     $ rails console
     $ rails c
 
-  Run local server (JSON data from Backend API) # backend folder
+  Run local server (JSON data from Backend API)
+    * backend folder
 
     $ rails server
     $ rails s
   
-  Open html page to view Single Page Application (SPA) - * frontend folder
+  Open html page to view Single Page Application (SPA)
+    * frontend folder
 
     $ open index.html
-  
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Gems Used. 
+  * ruby '2.6.1'
+  * rails, '~> 6.1.2', '>= 6.1.2.1'
+  * sqlite3, '~> 1.4'
+  * puma, '~> 5.0'
+  * active_model_serializers
+  * bootsnap, '>= 1.4.4', require: false
+  * 'rack-cors'
