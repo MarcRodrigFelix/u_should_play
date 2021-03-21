@@ -34,10 +34,10 @@ class Game{
       </div>
         
       <div class="comments-section">
+        <div class="add-comment">
           <h3>Add Comments:</h3>
-          <!-- <div data-id=${this.id} style="display:none;"> -->
             ${this.addNewComment()}
-          </div>
+        </div>
         <div data-id="${this.id}" class="game-comments">
           <h4>${this.title} Comments</h4>
         </div>

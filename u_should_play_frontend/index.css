@@ -3,7 +3,12 @@
   align-content: center;
   text-align: center;
   font-family: sans-serif;
+  color: #fff;
 }
+
+
+
+
 /* htmlTags ================================================ */
 body{
   /* background-color: #EEF5DB; */
@@ -16,7 +21,10 @@ body{
 }
 
 
+
+
 /* ID ================================================ */
+
 
 #main-div{
   /* background-color: linear-gradient(#141e30, #243b55);; */
@@ -24,17 +32,20 @@ body{
   margin: auto;
 }
 
+
 #game-form-div{
   width: 850px;
   padding: 15px;
   margin: auto;
 }
 
+
 #all-games{
   width: 950px;
   padding: 25px;
   margin: 25px auto;
 }
+
 
 #new-game-form{
   margin: 50px auto;
@@ -214,16 +225,23 @@ body{
   width: auto; /* Could be more or less, depending on screen size */
 }
 
+
+
+
 #new-comment-form{
   /* background-color: darkgoldenrod; */
   margin: auto;
   padding: 25px;
+  padding-top: 5px;
 }
 
 
 
 
 /* CLASS ================================================ */
+
+
+
 
 .single-game-div{
   width: 100%;
@@ -236,7 +254,7 @@ body{
   /* height: 900; */
   /* max-height: 900px; */
   /* background-color: white; */
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
 }
 
 
@@ -256,18 +274,23 @@ body{
   margin-left: 55%;
   padding-top: 5px;
   border-radius: 20px;
-  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-  box-shadow: 5px 5px 15px 5px #000000;
 }
 
+.add-comment{
+  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+  box-shadow: 5px 5px 15px 5px #000000;
+  padding: 10px;
+}
 
 .game-comments{
-  /* height: 375px; */
+  margin-top: 30px;
+  padding-top: 25px;
+  height: 375px;
   border-radius: 20px;
   font:16px/26px Georgia, Garamond, Serif;
   overflow: auto;
   cursor: all-scroll;
-  margin-left: 55%;
+  /* margin-left: 55%; */
 }
 
 .game-info{
