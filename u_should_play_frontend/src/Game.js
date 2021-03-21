@@ -28,21 +28,13 @@ class Game{
         <div class="inner-game-btns">
           <div class="btns">
             <div class="submit-btn">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
               <button data-id=${this.id} class="delete"> Delete ${this.title} </button>
             </div>
             <div class="submit-btn">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
               <button class="edit" >Edit</button>
             </div>
           </div>
-          <div class="edit-section" style="display: none;">
+          <div class="edit-section"">
             ${this.renderGameEditForm()}
           </div>
         </div>
@@ -64,15 +56,18 @@ class Game{
 
   renderGameEditForm(){
     return `
-      <form data-id="${this.id}" id="edit-form">
-        <input type="text" id="title" name="title" value="${this.title}" placeholder="Title"><br>
+    <div class="modal-content">
+      <form data-id="${this.id}" id="edit-form"">
+        <input type="text" id="title" name="title" value="${this.title}" placeholder="Title">
         <br>
-        <input type="text" id="image" name="image" value="${this.image}" placeholder="Image"><br>
+        <input type="text" id="image" name="image" value="${this.image}" placeholder="Image">
         <br>
-        <input type="text" id="review" name="review" value="${this.review}" placeholder="Review"><br>
+        <input type="text" id="review" name="review" value="${this.review}" placeholder="Review">
         <br>
         <input type="submit" value="Submit" name="submit" class="edit-btn">
-      </form>`
+      </form>
+      <button class="close-modal">Close</button>
+    </div>`
   }
 
 
@@ -98,6 +93,19 @@ class Game{
     </form>`
   }
 
+
+  static closeTheModal(modal){
+    Array.from(modal).forEach( modalButton => {
+      console.log(modalButton)
+      modalButton.addEventListener('click', (e) => {
+        if (e.target.parentNode.parentNode.style.display === 'block'){
+          e.target.parentNode.parentNode.style.display = 'none'
+        } else {
+          e.target.parentNode.parentNode.style.display = 'block'
+        }
+      })
+    })
+  }
 
 // style="height:400px;width:400px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;" // scroll box
 

@@ -27,12 +27,11 @@ function fetchAndRenderGames(){
 
     document.querySelectorAll('.edit').forEach( editBtn => {  // TOGGLE HIDDEN CLASS FOR EDIT FORM EVENT LISTENER
       editBtn.addEventListener('click', (e) => {
-console.log(e.target.parentNode.parentNode.children[1])
-e.preventDefault()
-        if (e.target.parentNode.parentNode.children[1].style.display === 'none'){
-          e.target.parentNode.parentNode.children[1].style.display = 'block'
+    e.preventDefault()
+        if (e.target.parentNode.parentNode.parentNode.children[1].style.display === 'none'){
+          e.target.parentNode.parentNode.parentNode.children[1].style.display = 'block'
         } else {
-          e.target.parentNode.parentNode.children[1].style.display = 'none'
+          e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none'
         }
       })
     });
@@ -55,6 +54,9 @@ e.preventDefault()
 
     const newCommentForm = document.querySelectorAll( '#new-comment-form' );
     submitNewComment( newCommentForm )
+
+    const closeModal = document.querySelectorAll('.close-modal');
+    Game.closeTheModal( closeModal )
   })
 };
 
@@ -107,6 +109,7 @@ console.log(e.target.parentNode)
 function submitNewComment(form){
   form.forEach( commentData => {
     commentData.addEventListener('submit', (e) => {
+      e.preventDefault()
       const formData = new FormData( e.target )
       const newCommentData = {
         content: formData.get( 'content' ),
@@ -117,3 +120,4 @@ function submitNewComment(form){
     })
   })
 };
+
