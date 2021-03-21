@@ -60,15 +60,15 @@ class Game{
 
       <form data-id="${this.id}" id="edit-form"">
         <div class="game-box">
-          <input type="text" id="title" name="title">
+          <input type="text" id="title" name="title" value="${this.title}">
           <label>Edit Title</label>
         </div>
         <div class="game-box">
-          <input type="text" id="image" name="image">
+          <input type="text" id="image" name="image" value="${this.image}">
           <label>Edit Image URL</label>
         </div>
         <div class="game-box">
-          <textarea type="text" id="review" name="review" ></textarea>
+          <textarea type="text" id="review" name="review">${this.review}</textarea>
           <label>Edit Reason</label>
         </div>
         <div class="submit-btn">
