@@ -24,7 +24,8 @@ Welcom to U Should Play. This is a web app for game lovers of all kind, where yo
  * Don't require signups or logins.
 
 ## Installation
- * backend folder
+
+  ## backend folder
 
   Download repo and try locally. Clone the repo and run 
 
@@ -48,8 +49,8 @@ Welcom to U Should Play. This is a web app for game lovers of all kind, where yo
     $ rails server
     $ rails s
   
- * frontend folder
- 
+  ## frontend folder
+
   Open html page to view Single Page Application (SPA)
     * frontend folder
 
