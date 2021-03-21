@@ -4,6 +4,7 @@
   text-align: center;
   font-family: sans-serif;
   color: #fff;
+  font-size: 14px;
 }
 
 
@@ -240,13 +241,25 @@ body{
 
 /* CLASS ================================================ */
 
+
+.inner-game-section{
+  padding: 50px;
+}
+.inner-game-section img{
+  margin: 25px;
+}
 .inner-game-section p{
   text-align: justify;
+}
+.inner-game-btns{
+
 }
 
 
 .single-game-div{
-  /* width: 100%; */
+  width: 1000px;
+  min-height: 650px;
+  margin: 150px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
@@ -283,17 +296,20 @@ body{
   /* margin-left: 55%;
   padding-top: 5px; */
   border-radius: 20px;
-}
-
-.add-comment{
-  border-radius: 20px;
-  /* -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-  box-shadow: 5px 5px 15px 5px #000000; */
-  /* padding: 10px; */
   background: linear-gradient(#141e30, #243b55);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
   border-radius: 10px;
+}
+
+.add-comment{
+  margin: 100px 50px 75px 0;
+  border-radius: 20px;
+  padding: 10px;
+  /* background: linear-gradient(#141e30, #243b55);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
+  border-radius: 10px; */
 }
 .add-comment button{
   background: none;
@@ -306,19 +322,19 @@ body{
 }
 
 .game-comments{
-  /* margin-top: 30px;
-  padding-top: 25px;
-  height: 375px; */
+  padding: 35px;
+  margin: 80px 50px 0 15px;
   border-radius: 20px;
   font:16px/26px Georgia, Garamond, Serif;
   overflow: auto;
   cursor: all-scroll;
-  /* margin-left: 50px;
-  width: 350px; */
+  height: 35%
 }
 
 .game-comments div{
-  border-bottom: 1px solid #fff;
+  /* border-bottom: 1px solid #fff; */
+  text-align: justify;
+  padding: 0 0 10px 0;
 }
 
 .game-info{
@@ -344,10 +360,10 @@ body{
   margin: auto;
   padding: 25px;
   width: 335px;
-  background: linear-gradient(#141e30, #243b55);
+  /* background: linear-gradient(#141e30, #243b55);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
-  border-radius: 10px;
+  border-radius: 10px; */
 }
 .btns button{
   background: none;
@@ -358,7 +374,6 @@ body{
 	cursor: pointer;
 	outline: inherit;
 }
-
 
 
 /* .edit-section {

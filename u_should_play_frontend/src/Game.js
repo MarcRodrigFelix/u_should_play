@@ -15,14 +15,17 @@ class Game{
   renderGameHTML(){
     return `
     <div data-id=${this.id} class="single-game-div" ">
-
       <div class="game-info-section" >
+
         <div class="inner-game-section">
           <div class="game-info">
             <h2>${this.title}</h2>
             <img src=${this.image} style="width: 260px" >
             <p>${this.review}</p>
           </div>
+        </div>
+
+        <div class="inner-game-btns">
           <div class="btns">
             <button data-id=${this.id} class="delete"> Delete ${this.title} </button>
             <button class="edit" >Edit</button> 
@@ -40,6 +43,7 @@ class Game{
         </div>
         <div data-id="${this.id}" class="game-comments">
           <h4>${this.title} Comments</h4>
+          <span style="font-size: 10px;">(hover over comments and scroll to see more)</span>
         </div>
       </div>
     </div>`
