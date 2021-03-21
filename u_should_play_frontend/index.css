@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   align-content: center;
   text-align: center;
   font-family: sans-serif;
@@ -240,57 +240,81 @@ body{
 
 /* CLASS ================================================ */
 
-
+.inner-game-section p{
+  text-align: justify;
+}
 
 
 .single-game-div{
-  width: 100%;
-  padding: 75px 0 75px 0;
+  /* width: 100%; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  /* padding: 75px 0 75px 0; */
   /* padding-bottom: 50px; */
   /* background-color: blue; */
-  margin: auto;
+  /* margin: auto;
   margin-top: 35px;
-  margin-bottom: 75px;
+  margin-bottom: 75px; */
   /* height: 900; */
   /* max-height: 900px; */
   /* background-color: white; */
   /* border-bottom: 1px solid black; */
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
+  border-radius: 10px;
 }
 
 
 .game-info-section{
-  width: 50%;
-  float: left;
+  /* width: 50%;
+  float: left; */
   /* height: 100%; */
-  padding-left: 12px;
-  padding-right: 12px;
+  /* padding-left: 12px;
+  padding-right: 12px; */
   border-radius: 20px;
 }
 
 
 .comments-section{
-  margin-left: 55%;
-  margin-left: 55%;
-  padding-top: 5px;
+  /* margin-left: 55%;
+  padding-top: 5px; */
   border-radius: 20px;
 }
 
 .add-comment{
   border-radius: 20px;
-  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-  box-shadow: 5px 5px 15px 5px #000000;
-  padding: 10px;
+  /* -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+  box-shadow: 5px 5px 15px 5px #000000; */
+  /* padding: 10px; */
+  background: linear-gradient(#141e30, #243b55);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
+  border-radius: 10px;
+}
+.add-comment button{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .game-comments{
-  margin-top: 30px;
+  /* margin-top: 30px;
   padding-top: 25px;
-  height: 375px;
+  height: 375px; */
   border-radius: 20px;
   font:16px/26px Georgia, Garamond, Serif;
   overflow: auto;
   cursor: all-scroll;
-  /* margin-left: 55%; */
+  /* margin-left: 50px;
+  width: 350px; */
 }
 
 .game-comments div{
@@ -298,8 +322,8 @@ body{
 }
 
 .game-info{
-  margin: 15px auto;
-  padding: 30px;
+  /* margin: 15px auto; */
+  /* padding: 30px; */
   border-radius: 20px;
   color: #243b55;
   /* -webkit-box-shadow: 5px 5px 15px 5px #000000; 
@@ -320,9 +344,19 @@ body{
   margin: auto;
   padding: 25px;
   width: 335px;
-  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-  box-shadow: 5px 5px 15px 5px #000000;
-  border-radius: 20px;
+  background: linear-gradient(#141e30, #243b55);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
+  border-radius: 10px;
+}
+.btns button{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 
