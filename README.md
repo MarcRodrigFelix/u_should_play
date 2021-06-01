@@ -2,7 +2,7 @@
 
 ## Description.
 
-Welcom to U Should Play. This is a web app for game lovers of all kind, where you can post a game you feel very proudly of and really want gamers out there to experience at least once. A game so wonderful you just can't stand by and let fellow gamers miss.
+Welcome to U Should Play. This is a web app for game lovers of all kind, where you can post a game you feel very proudly of and really want gamers out there to experience at least once. A game so wonderful you just can't stand by and let fellow gamers miss.
 
 ## What is U Should Play
   * Single Page Application
