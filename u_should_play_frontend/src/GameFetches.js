@@ -36,7 +36,7 @@ class FetchGameApi{
 
   static deleteGame(gameId){
     const id = parseInt(gameId)
-    fetch(`http://localhost:3000/games/${gameId}`, {
+    fetch(`http://localhost:3000/games/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
