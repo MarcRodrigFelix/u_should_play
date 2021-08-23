@@ -10,7 +10,7 @@ class GamesController < ApplicationController
     if game.save
       render json: game, status: :accepted
     else
-      render json: {errors: game.errors.full_messages}, status: :unprocessible_entity
+      render json: {errors: game.errors.full_messages}
     end
   end
 
