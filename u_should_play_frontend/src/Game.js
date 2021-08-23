@@ -121,6 +121,4 @@ class Game{
     })
   }
 
-// style="height:400px;width:400px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;" // scroll box
-
 }
