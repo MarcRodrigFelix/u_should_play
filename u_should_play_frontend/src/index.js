@@ -65,7 +65,7 @@ function fetchAndRenderGames(){
 
 function showEachGameComments( gameComments, gameId ){
   let currentGameId = gameId
-  let currentGame = document.querySelector( `[data-id="${parseInt(gameId)}"]` ) // get game by game_id
+  let currentGame = document.querySelector( `[data-id="${parseInt(currentGameId)}"]` ) // get game by game_id
   Array.from( gameComments ).forEach( gameDiv => {
     let newComment = new Comment( gameDiv )
     currentGame.getElementsByClassName('game-comments')[0].innerHTML += newComment.renderCommentHTML() // render a New Comment into game html
