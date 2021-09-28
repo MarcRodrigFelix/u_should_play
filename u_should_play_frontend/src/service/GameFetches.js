@@ -1,15 +1,16 @@
 
-class FetchGameApi{
+class ServiceGame{
   constructor(){
+    this.baseUrl = "http://localhost:3000/games"
   }
 
-  static getGamesFetch(){
-    return fetch("http://localhost:3000/games")
+  getGamesFetch(){
+    return fetch(this.baseUrl)
     .then( response => response.json() )
   };
 
 
-  static postGamesFetch(gameData){
+  postGamesFetch(gameData){
     fetch("http://localhost:3000/games", {
       method: 'POST',
       headers: {
@@ -22,7 +23,7 @@ class FetchGameApi{
   };
 
   
-  static updateGame(gameId, gameData){
+  updateGame(gameId, gameData){
     fetch(`http://localhost:3000/games/${gameId}`, {
       method: 'PATCH',
       headers: {
@@ -34,7 +35,7 @@ class FetchGameApi{
   };
 
 
-  static deleteGame(gameId){
+  deleteGame(gameId){
     const id = parseInt(gameId)
     fetch(`http://localhost:3000/games/${id}`, {
       method: "DELETE",

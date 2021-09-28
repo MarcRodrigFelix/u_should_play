@@ -3,6 +3,8 @@ const addNewComment = document.getElementsByClassName('add');
 const eachGameDiv = document.getElementsByClassName("single-game-div");
 
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
   fetchAndRenderGames();
   addNewGameFromForm(newGameForm);
@@ -10,55 +12,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function fetchAndRenderGames(){
-  FetchGameApi.getGamesFetch()
-    .then( gamesObj => {
-      gamesObj.forEach( gameObject => {
-      const newGame = new Game(gameObject) // create a new game with Game class
-      const renderGame = newGame.renderGameHTML()
-      document.getElementById('all-games').innerHTML += renderGame
-      showEachGameComments(newGame.gameComments, newGame.id); // SEND THROUGH EACH GAME COMMENT TO MAKE A COMMENT CLASS AND RENDER HTML
-    });
+  new Games()
+  // const service = new FetchGameApi()
+  // service.getGamesFetch()
+  //   .then( gamesObj => {
+  //     gamesObj.forEach( gameObject => {
+  //     const newGame = new Game(gameObject) // create a new game with Game class
+  //     const renderGame = newGame.renderGameHTML()
+  //     document.getElementById('all-games').innerHTML += renderGame
+  //     showEachGameComments(newGame.gameComments, newGame.id); // SEND THROUGH EACH GAME COMMENT TO MAKE A COMMENT CLASS AND RENDER HTML
+  //   });
 
-    document.querySelectorAll('.delete').forEach( game => {   // DELETE GAME EVENT LISTENER
-      game.addEventListener('click', (e) => {
-        FetchGameApi.deleteGame(e.target.dataset.id)
-      })
-    });
+  //   document.querySelectorAll('.delete').forEach( game => {   // DELETE GAME EVENT LISTENER
+  //     game.addEventListener('click', (e) => {
+  //       FetchGameApi.deleteGame(e.target.dataset.id)
+  //     })
+  //   });
 
-    document.querySelectorAll('.edit').forEach( editBtn => {  // TOGGLE HIDDEN CLASS FOR EDIT FORM EVENT LISTENER
-      editBtn.addEventListener('click', (e) => {
-    // e.preventDefault()
-        // e.target.parentNode.parentNode.parentNode.children[1].style.display.toggle()
-        if (e.target.parentNode.parentNode.parentNode.children[1].style.display === 'none'){
-          e.target.parentNode.parentNode.parentNode.children[1].style.display = 'block'
-        } else {
-          e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none'
-        }
-      })
-    });
+  //   document.querySelectorAll('.edit').forEach( editBtn => {  // TOGGLE HIDDEN CLASS FOR EDIT FORM EVENT LISTENER
+  //     editBtn.addEventListener('click', (e) => {
+  //   // e.preventDefault()
+  //       // e.target.parentNode.parentNode.parentNode.children[1].style.display.toggle()
+  //       if (e.target.parentNode.parentNode.parentNode.children[1].style.display === 'none'){
+  //         e.target.parentNode.parentNode.parentNode.children[1].style.display = 'block'
+  //       } else {
+  //         e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none'
+  //       }
+  //     })
+  //   });
 
-    const editForms = document.querySelectorAll('#edit-form');  // ITERATE THROUGH EACH EDIT FORM AND SUBMIT BUTTON
-    for (let editForm of editForms){
-        submitEditForm(editForm)  // send each edit form through
-    }
+  //   const editForms = document.querySelectorAll('#edit-form');  // ITERATE THROUGH EACH EDIT FORM AND SUBMIT BUTTON
+  //   for (let editForm of editForms){
+  //       submitEditForm(editForm)  // send each edit form through
+  //   }
 
-    Array.from(addNewComment).forEach( addBtn => {
-      addBtn.addEventListener('click', (e) => {
-        // console.log(e.target.parentNode.children[1].style.display)
-        if (e.target.parentNode.children[1].style.display === 'none'){
-          e.target.parentNode.children[1].style.display = 'block'
-        } else {
-          e.target.parentNode.children[1].style.display = 'none'
-        }
-      })
-    })
+  //   Array.from(addNewComment).forEach( addBtn => {
+  //     addBtn.addEventListener('click', (e) => {
+  //       // console.log(e.target.parentNode.children[1].style.display)
+  //       if (e.target.parentNode.children[1].style.display === 'none'){
+  //         e.target.parentNode.children[1].style.display = 'block'
+  //       } else {
+  //         e.target.parentNode.children[1].style.display = 'none'
+  //       }
+  //     })
+  //   })
 
-    const newCommentForm = document.querySelectorAll( '#new-comment-form' );
-    submitNewComment( newCommentForm )
+  //   const newCommentForm = document.querySelectorAll( '#new-comment-form' );
+  //   submitNewComment( newCommentForm )
 
-    const closeModal = document.querySelectorAll('.close-modal');
-    Game.closeTheModal( closeModal )
-  })
+  //   const closeModal = document.querySelectorAll('.close-modal');
+  //   Game.closeTheModal( closeModal )
+  // })
 };
 
 
@@ -94,7 +98,7 @@ e.preventDefault()
 function submitEditForm(editForm){
   editForm.addEventListener('submit', (e) => {
 e.preventDefault()
-console.log(e.target.parentNode)
+// console.log(e.target.parentNode)
       const gameID = e.target.dataset.id
       const editedGameData = {
         title: e.target.title.value,
@@ -109,6 +113,7 @@ console.log(e.target.parentNode)
 
 function submitNewComment(form){
   form.forEach( commentData => {
+console.log(commentData)
     commentData.addEventListener('submit', (e) => {
       e.preventDefault()
       const formData = new FormData( e.target )
@@ -121,4 +126,3 @@ function submitNewComment(form){
     })
   })
 };
-
