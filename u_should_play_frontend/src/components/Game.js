@@ -11,6 +11,11 @@ class Game{
   }
 
 
+  // initializeGame(){
+  //   const games = new Games()
+  //   games.getGames()
+  // }
+
 
   renderGameHTML(){
     return `
