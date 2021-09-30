@@ -12,8 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function fetchAndRenderGames(){
-  new Games()
-  // const service = new FetchGameApi()
+  const games = new Games()
+  games
+console.log(games)
+
+  // const service = new GameService()
   // service.getGamesFetch()
   //   .then( gamesObj => {
   //     gamesObj.forEach( gameObject => {

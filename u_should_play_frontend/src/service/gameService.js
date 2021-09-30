@@ -1,10 +1,11 @@
 
-class ServiceGame{
+class GameService{
+
   constructor(){
     this.baseUrl = "http://localhost:3000/games"
   }
 
-  getGamesFetch(){
+  getGames(){
     return fetch(this.baseUrl)
     .then( response => response.json() )
   };
