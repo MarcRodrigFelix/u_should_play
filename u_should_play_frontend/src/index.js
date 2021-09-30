@@ -12,11 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function fetchAndRenderGames(){
+<<<<<<< HEAD
   const games = new Games()
   games
 console.log(games)
 
   // const service = new GameService()
+=======
+console.log('hello')
+  new Games()
+  // const service = new FetchGameApi()
+>>>>>>> 10e82dd7f577f4fc511ca154bc34029d0a3062ba
   // service.getGamesFetch()
   //   .then( gamesObj => {
   //     gamesObj.forEach( gameObject => {
