@@ -13,7 +13,6 @@ class Games{
            Array.from(games).forEach( game => {
               return this.allGames.push(new Game(game))
             })
-console.log(this.allGames)
         })
 
     }

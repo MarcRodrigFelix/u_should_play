@@ -6,8 +6,7 @@ class Game{
     this.image = gameObject.image
     this.review = gameObject.review
     this.gameComments = gameObject.comments
-
-    this.gameElement = document.createElement('li')
+    this.renderGameHTML()
   }
 
 
