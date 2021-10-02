@@ -6,6 +6,8 @@ const gamesContainers = document.getElementById('all-games');
 const games = new Games()
 games.launchGames()
 
+
+
 addNewGameFromForm(newGameForm);
 
 
