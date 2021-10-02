@@ -1,12 +1,10 @@
 const newGameForm = document.getElementById('new-game-form');
 const addNewComment = document.getElementsByClassName('add');
 const eachGameDiv = document.getElementsByClassName("single-game-div");
-const gamesContainers = document.getElementById('all-games');
+const gamesContainers = document.getElementById('games-container');
 
 const games = new Games()
 games.launchGames()
-
-
 
 addNewGameFromForm(newGameForm);
 

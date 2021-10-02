@@ -1,8 +1,11 @@
 class Comment{
+
   constructor(commentObject){
+    this.comments = []
     this.content = commentObject.content
     this.commentator = commentObject.commentator
     this.game_id = commentObject.game_id
+    this.comments.push(this)
   }
 
   static postCommentFetch(formData){

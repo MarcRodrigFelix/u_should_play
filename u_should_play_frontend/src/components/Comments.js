@@ -1,0 +1,7 @@
+class Comments{
+
+    constructor(){
+
+    }
+    
+}
