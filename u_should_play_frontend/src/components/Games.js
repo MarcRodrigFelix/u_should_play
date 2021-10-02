@@ -2,7 +2,7 @@ class Games{
 
 
     constructor() {
-        this.allGames = []
+        this.games = []
         this.service = new GameService()
     }
 
@@ -10,11 +10,12 @@ class Games{
     launchGames(){
        this.service.getGames()
        .then( (games) => {
-           Array.from(games).forEach( game => {
-              return this.allGames.push(new Game(game))
-            })
+           for (const game of games) {
+               this.games.push(new Game(game)) // PUSH EACH NEW GAME INTO THIS.GAMES ARRAY
+               const newGame = new Game(game) // CREATE A NEW GAME THROUGH GAME CLASS
+               newGame.addHTMLToDom() // RENDER THAT GAMES HTML TO DOM
+           }
         })
-
     }
-    
+
 }

@@ -1,22 +1,23 @@
 class Game{
   
+  static gameContainer = document.getElementById('games-container')
+  static gameList = document.getElementById('games-list')
+
+
   constructor(gameObject){
     this.id = gameObject.id
     this.title = gameObject.title
     this.image = gameObject.image
     this.review = gameObject.review
     this.gameComments = gameObject.comments
+
+    this.gamesLi = document.createElement('li')
   }
 
 
-  // initializeGame(){
-  //   const games = new Games()
-  //   games.getGames()
-  // }
-
 
   renderGameHTML(){
-    return `
+    this.gamesLi.innerHTML += `
     <div data-id=${this.id} class="single-game-div" ">
       <div class="game-info-section" >
 
@@ -53,7 +54,13 @@ class Game{
           <span style="font-size: 10px;">(hover over comments and scroll to see more)</span>
         </div>
       </div>
-    </div>`
+    </div>
+    `
+    return this.gamesLi
+  }
+
+  addHTMLToDom(){
+    Game.gameList.append(this.renderGameHTML())
   }
 
 
