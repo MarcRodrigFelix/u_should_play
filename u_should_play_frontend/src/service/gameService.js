@@ -19,7 +19,7 @@ class GameService{
       },
       body: JSON.stringify(gameData)
     })
-    .then( resp => { resp.json() })
+    .then( response => { response.json() })
   };
 
   
@@ -37,7 +37,7 @@ class GameService{
 
   deleteGame(gameId){
     const id = parseInt(gameId)
-    fetch(`http://localhost:3000/games/${id}`, {
+    fetch(`${this.baseUrl}/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
