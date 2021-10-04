@@ -5,11 +5,13 @@ const gamesContainers = document.getElementById('games-container');
 
 const games = new Games()
 games.launchGames()
-games.createGames(newGameForm)
+
+newGameForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+  games.createGames(e.target)
+})
 
 // addNewGameFromForm(newGameForm);
-
-
 
 
 

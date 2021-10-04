@@ -20,18 +20,16 @@ class Games{
 
 
     createGames(form){
-    const service = this.service
-        form.addEventListener('submit', (e) => {
-            e.preventDefault()
-            const formData = new FormData(e.target)
-            const gameData = {
-                title: formData.get('title'),
-                image: formData.get('image'),
-                review: formData.get('review')
-            }
-            service.postGames(gameData)
-        })
-
+        const formData = new FormData(form)
+        const gameData = {
+            title: formData.get('title'),
+            image: formData.get('image'),
+            review: formData.get('review')
+        }
+        this.service.postGames(gameData)
+        this.games.push(new Game(gameData))
+        newGame.addHTMLToDom()
     }
 
+    
 }
