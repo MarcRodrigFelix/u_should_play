@@ -2,6 +2,8 @@ class Game{
   
   static gameContainer = document.getElementById('games-container')
   static gameList = document.getElementById('games-list')
+  static deleteGames = document.getElementsByClassName('delete')
+  static service = new GameService()
 
 
   constructor(gameObject){
@@ -12,6 +14,7 @@ class Game{
     this.gameComments = gameObject.comments
 
     this.gamesLi = document.createElement('li')
+    this.gamesLi.style.listStyleType = 'none'
   }
 
 
@@ -59,8 +62,21 @@ class Game{
     return this.gamesLi
   }
 
+
   addHTMLToDom(){
     Game.gameList.append(this.renderGameHTML())
+  }
+
+
+  addDeleteFunctionToGame(){
+    const btns = document.querySelectorAll('.delete')
+    btns.forEach( (deleteButton) => { deleteButton.addEventListener('click', this.deleteThisGame) })
+  }
+
+
+  deleteThisGame(e){
+    e.target.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
+    Game.service.deleteGame(e.target.dataset.id)
   }
 
 

@@ -5,8 +5,6 @@ const gamesContainers = document.getElementById('games-container');
 
 
 
-
-
 const games = new Games()
 games.launchGames()
 

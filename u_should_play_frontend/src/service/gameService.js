@@ -36,8 +36,7 @@ class GameService{
 
 
   deleteGame(gameId){
-    const id = parseInt(gameId)
-    fetch(`${this.baseUrl}/${id}`, {
+    fetch(`${this.baseUrl}/${gameId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
