@@ -4,6 +4,7 @@ class Games{
     constructor() {
         this.games = []
         this.service = new GameService()
+        this.deleteGames(this.games)
     }
 
 
@@ -31,5 +32,4 @@ class Games{
         newGame.addHTMLToDom()
     }
 
-    
 }

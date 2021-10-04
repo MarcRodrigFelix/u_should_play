@@ -3,21 +3,25 @@ const addNewComment = document.getElementsByClassName('add');
 const eachGameDiv = document.getElementsByClassName("single-game-div");
 const gamesContainers = document.getElementById('games-container');
 
+
+
+
+
 const games = new Games()
 games.launchGames()
+
 
 newGameForm.addEventListener('submit', (e) => {
   e.preventDefault()
   games.createGames(e.target)
 })
 
-// addNewGameFromForm(newGameForm);
 
 
+// deleteGame.addEventListener('click', (e) => { console.log(e.target) })
 
 
 // START ===================================================  ORIGINAL CODE! (GROSS)
-
 
 
 
