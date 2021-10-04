@@ -11,16 +11,15 @@ class GameService{
   };
 
 
-  postGamesFetch(gameData){
-    fetch("http://localhost:3000/games", {
+  postGames(gameData){
+    fetch(this.baseUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
       },
       body: JSON.stringify(gameData)
     })
-    .then( resp => resp.json())
+    .then( resp => { resp.json() })
   };
 
   

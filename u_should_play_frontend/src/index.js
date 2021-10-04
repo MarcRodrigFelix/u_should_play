@@ -5,8 +5,9 @@ const gamesContainers = document.getElementById('games-container');
 
 const games = new Games()
 games.launchGames()
+games.createGames(newGameForm)
 
-addNewGameFromForm(newGameForm);
+// addNewGameFromForm(newGameForm);
 
 
 
@@ -97,18 +98,18 @@ function showEachGameComments( gameComments, gameId ){
 
 
 // listen to form, and POST game
-function addNewGameFromForm( form ){
-  form.addEventListener( 'submit', (e) => {
-e.preventDefault()
-    let formData = new FormData( e.target )
-    const gameData = {
-      title: formData.get( 'title' ),
-      image: formData.get( 'image' ),
-      review: formData.get( 'review' )
-    }
-    FetchGameApi.postGamesFetch( gameData )
-  })
-};
+// function addNewGameFromForm( form ){
+//   form.addEventListener( 'submit', (e) => {
+// e.preventDefault()
+//     let formData = new FormData( e.target )
+//     const gameData = {
+//       title: formData.get( 'title' ),
+//       image: formData.get( 'image' ),
+//       review: formData.get( 'review' )
+//     }
+//     FetchGameApi.postGamesFetch( gameData )
+//   })
+// };
 
 
 
