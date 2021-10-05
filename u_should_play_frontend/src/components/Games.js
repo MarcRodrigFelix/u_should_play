@@ -14,7 +14,7 @@ class Games{
                this.games.push(new Game(game)) // PUSH EACH NEW GAME INTO THIS.GAMES ARRAY
                const newGame = new Game(game) // CREATE A NEW GAME THROUGH GAME CLASS
                newGame.addHTMLToDom() // RENDER THAT GAMES HTML TO DOM
-               newGame.addDeleteFunctionToGame()
+               newGame.addDeleteFunctionToGame() // ADD DELETE METHOD TO GAMES
            }
         })
     }
@@ -31,6 +31,12 @@ class Games{
         this.games.push(new Game(gameData))
         const newGame = new Game(gameData)
         newGame.addHTMLToDom()
+        newGame.addDeleteFunctionToGame()
+    }
+
+
+    updateGames(gameId, gameData){
+
     }
 
 }

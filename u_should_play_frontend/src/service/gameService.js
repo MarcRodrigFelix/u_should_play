@@ -24,7 +24,7 @@ class GameService{
 
   
   updateGame(gameId, gameData){
-    fetch(`http://localhost:3000/games/${gameId}`, {
+    fetch(`${this.baseUrl}/${gameId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

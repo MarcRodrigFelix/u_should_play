@@ -69,14 +69,15 @@ class Game{
 
 
   addDeleteFunctionToGame(){
+console.log(this.id)
     const btns = document.querySelectorAll('.delete')
     btns.forEach( (deleteButton) => { deleteButton.addEventListener('click', this.deleteThisGame) })
   }
 
 
   deleteThisGame(e){
-    e.target.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
-    Game.service.deleteGame(e.target.dataset.id)
+    e.target.parentElement.parentElement.parentElement.parentElement.parentElement.remove() // REMOVE GAME ELEMENT FROM DOM
+    Game.service.deleteGame(e.target.dataset.id) 
   }
 
 
