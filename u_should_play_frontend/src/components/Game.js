@@ -80,10 +80,10 @@ class Game{
 
   addEditFunctionToGame(){
     const editBtns = document.querySelectorAll('.edit')
-    editBtns.forEach( (editButtons) => { editButtons.addEventListener('click', this.updateThisGame) })
+    editBtns.forEach( (editButtons) => { editButtons.addEventListener('click', this.openEditModal) })
   }
 
-  updateThisGame(e){
+  openEditModal(e){
     e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none' // MAKE SURE DISPLAY STYLE IS SET TO NONE
 
     if (e.target.parentNode.parentNode.parentNode.children[1].style.display === 'none'){
