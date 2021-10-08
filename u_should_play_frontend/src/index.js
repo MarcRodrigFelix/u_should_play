@@ -120,19 +120,19 @@ function showEachGameComments( gameComments, gameId ){
 
 
 // listen to edit form submit button and PATCH game
-function submitEditForm(editForm){
-  editForm.addEventListener('submit', (e) => {
-e.preventDefault()
+// function submitEditForm(editForm){
+//   editForm.addEventListener('submit', (e) => {
+// e.preventDefault()
 // console.log(e.target.parentNode)
-      const gameID = e.target.dataset.id
-      const editedGameData = {
-        title: e.target.title.value,
-        image: e.target.image.value,
-        review: e.target.review.value
-      }
-      FetchGameApi.updateGame(gameID, editedGameData)
-  })
-};
+      // const gameID = e.target.dataset.id
+      // const editedGameData = {
+      //   title: e.target.title.value,
+      //   image: e.target.image.value,
+      //   review: e.target.review.value
+      // }
+      // FetchGameApi.updateGame(gameID, editedGameData)
+//   })
+// };
 
 
 

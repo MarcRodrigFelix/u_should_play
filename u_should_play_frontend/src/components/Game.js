@@ -18,6 +18,68 @@ class Game{
   }
 
 
+
+
+  addHTMLToDom(){
+    Game.gameList.append(this.renderGameHTML())
+  }
+
+
+  addDeleteFunctionToGame(){
+    const btns = document.querySelectorAll('.delete')
+    btns.forEach( (deleteButton) => { deleteButton.addEventListener('click', this.deleteThisGame) })
+  }
+
+
+  addUpdateFunctionToGame(){
+    const editForms = document.querySelectorAll('#edit-form')
+    editForms.forEach( (editForm) => { editForm.addEventListener('submit', this.editFormListener) })
+  }
+
+
+  deleteThisGame(e){
+    e.target.parentElement.parentElement.parentElement.parentElement.parentElement.remove() // REMOVE GAME ELEMENT FROM DOM
+    Game.service.deleteGame(e.target.dataset.id)
+  }
+
+
+  editFormListener(e){
+    e.preventDefault()
+    const gameId = e.target.dataset.id
+    const editedGameData = {
+      title: e.target.title.value,
+      image: e.target.image.value,
+      review: e.target.review.value
+    }
+    Game.service.updateGame(gameId, editedGameData)
+  }
+
+
+  toggleModal(){
+    const editBtns = document.querySelectorAll('.edit')
+    const closeModalBtns = document.querySelectorAll('.close-modal');
+
+    editBtns.forEach( (edit) => { edit.addEventListener('click', this.openModal) })
+    closeModalBtns.forEach( (close) => { close.addEventListener('click', this.closeModal )})
+  }
+
+
+  openModal(e){
+    e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none' // MAKE SURE DISPLAY STYLE IS SET TO NONE
+
+    if (e.target.parentNode.parentNode.parentNode.children[1].style.display === 'none'){
+        e.target.parentNode.parentNode.parentNode.children[1].style.display = 'block'
+      } 
+      // else {
+      //   e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none'
+      // }
+  }
+
+  closeModal(e){
+    e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none'
+  }
+
+
   renderGameHTML(){
     this.gamesLi.innerHTML += `
     <div data-id=${this.id} class="single-game-div" ">
@@ -59,38 +121,6 @@ class Game{
     </div>
     `
     return this.gamesLi
-  }
-
-
-  addHTMLToDom(){
-    Game.gameList.append(this.renderGameHTML())
-  }
-
-
-  addDeleteFunctionToGame(){
-    const btns = document.querySelectorAll('.delete')
-    btns.forEach( (deleteButton) => { deleteButton.addEventListener('click', this.deleteThisGame) })
-  }
-
-
-  deleteThisGame(e){
-    e.target.parentElement.parentElement.parentElement.parentElement.parentElement.remove() // REMOVE GAME ELEMENT FROM DOM
-    Game.service.deleteGame(e.target.dataset.id)
-  }
-
-  addEditFunctionToGame(){
-    const editBtns = document.querySelectorAll('.edit')
-    editBtns.forEach( (editButtons) => { editButtons.addEventListener('click', this.openEditModal) })
-  }
-
-  openEditModal(e){
-    e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none' // MAKE SURE DISPLAY STYLE IS SET TO NONE
-
-    if (e.target.parentNode.parentNode.parentNode.children[1].style.display === 'none'){
-        e.target.parentNode.parentNode.parentNode.children[1].style.display = 'block'
-      } else {
-        e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none'
-      }
   }
 
 
@@ -148,17 +178,17 @@ class Game{
   }
 
 
-  static closeTheModal(modal){
-    Array.from(modal).forEach( modalButton => {
-      console.log(modalButton)
-      modalButton.addEventListener('click', (e) => {
-        if (e.target.parentNode.parentNode.style.display === 'block'){
-          e.target.parentNode.parentNode.style.display = 'none'
-        } else {
-          e.target.parentNode.parentNode.style.display = 'block'
-        }
-      })
-    })
-  }
+  // static closeTheModal(modal){
+  //   Array.from(modal).forEach( modalButton => {
+  //     console.log(modalButton)
+  //     modalButton.addEventListener('click', (e) => {
+  //       if (e.target.parentNode.parentNode.style.display === 'block'){
+  //         e.target.parentNode.parentNode.style.display = 'none'
+  //       } else {
+  //         e.target.parentNode.parentNode.style.display = 'block'
+  //       }
+  //     })
+  //   })
+  // }
 
 }

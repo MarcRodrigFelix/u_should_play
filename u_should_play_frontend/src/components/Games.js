@@ -4,8 +4,12 @@ class Games{
     constructor() {
         this.games = []
         this.service = new GameService()
+        this.consoleGames()
     }
 
+    consoleGames(){
+        this.games.forEach( (game) => { console.log(game) } )
+    }
 
     launchGames(){
        this.service.getGames()
@@ -15,7 +19,8 @@ class Games{
                const newGame = new Game(game) // CREATE A NEW GAME THROUGH GAME CLASS
                newGame.addHTMLToDom() // RENDER THAT GAMES HTML TO DOM
                newGame.addDeleteFunctionToGame() // ADD DELETE METHOD TO GAMES
-               newGame.addEditFunctionToGame()
+               newGame.addUpdateFunctionToGame()
+               newGame.toggleModal()
            }
         })
     }
