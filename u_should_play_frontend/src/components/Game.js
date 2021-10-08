@@ -54,8 +54,7 @@ class Game{
     Game.service.updateGame(gameId, editedGameData)
     e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none'
 
-    let currentGame = document.querySelector( `[data-id="${parseInt(gameId)}"]` )
-
+    const currentGame = document.querySelector( `[data-id="${parseInt(gameId)}"]` )
     currentGame.children[0].children[0].children[0].children[0].innerText = editedGameData.title
     currentGame.children[0].children[0].children[0].children[1].innerText = editedGameData.image
     currentGame.children[0].children[0].children[0].children[2].innerText = editedGameData.review // UPDATE DOM
