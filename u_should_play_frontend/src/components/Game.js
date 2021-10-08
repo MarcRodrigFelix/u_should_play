@@ -18,7 +18,6 @@ class Game{
   }
 
 
-
   renderGameHTML(){
     this.gamesLi.innerHTML += `
     <div data-id=${this.id} class="single-game-div" ">
@@ -69,7 +68,6 @@ class Game{
 
 
   addDeleteFunctionToGame(){
-console.log(this.id)
     const btns = document.querySelectorAll('.delete')
     btns.forEach( (deleteButton) => { deleteButton.addEventListener('click', this.deleteThisGame) })
   }
@@ -77,7 +75,22 @@ console.log(this.id)
 
   deleteThisGame(e){
     e.target.parentElement.parentElement.parentElement.parentElement.parentElement.remove() // REMOVE GAME ELEMENT FROM DOM
-    Game.service.deleteGame(e.target.dataset.id) 
+    Game.service.deleteGame(e.target.dataset.id)
+  }
+
+  addEditFunctionToGame(){
+    const editBtns = document.querySelectorAll('.edit')
+    editBtns.forEach( (editButtons) => { editButtons.addEventListener('click', this.updateThisGame) })
+  }
+
+  updateThisGame(e){
+    e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none' // MAKE SURE DISPLAY STYLE IS SET TO NONE
+
+    if (e.target.parentNode.parentNode.parentNode.children[1].style.display === 'none'){
+        e.target.parentNode.parentNode.parentNode.children[1].style.display = 'block'
+      } else {
+        e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none'
+      }
   }
 
 

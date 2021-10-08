@@ -15,6 +15,7 @@ class Games{
                const newGame = new Game(game) // CREATE A NEW GAME THROUGH GAME CLASS
                newGame.addHTMLToDom() // RENDER THAT GAMES HTML TO DOM
                newGame.addDeleteFunctionToGame() // ADD DELETE METHOD TO GAMES
+               newGame.addEditFunctionToGame()
            }
         })
     }
@@ -34,9 +35,5 @@ class Games{
         newGame.addDeleteFunctionToGame()
     }
 
-
-    updateGames(gameId, gameData){
-
-    }
 
 }

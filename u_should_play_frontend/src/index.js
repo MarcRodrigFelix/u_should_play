@@ -4,9 +4,11 @@ const eachGameDiv = document.getElementsByClassName("single-game-div");
 const gamesContainers = document.getElementById('games-container');
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const games = new Games()
+  games.launchGames()
+});
 
-const games = new Games()
-games.launchGames()
 
 
 newGameForm.addEventListener('submit', (e) => {
@@ -50,17 +52,17 @@ newGameForm.addEventListener('submit', (e) => {
   //     })
   //   });
 
-  //   document.querySelectorAll('.edit').forEach( editBtn => {  // TOGGLE HIDDEN CLASS FOR EDIT FORM EVENT LISTENER
-  //     editBtn.addEventListener('click', (e) => {
-  //   // e.preventDefault()
-  //       // e.target.parentNode.parentNode.parentNode.children[1].style.display.toggle()
-  //       if (e.target.parentNode.parentNode.parentNode.children[1].style.display === 'none'){
-  //         e.target.parentNode.parentNode.parentNode.children[1].style.display = 'block'
-  //       } else {
-  //         e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none'
-  //       }
-  //     })
-  //   });
+    // document.querySelectorAll('.edit').forEach( editBtn => {  // TOGGLE HIDDEN CLASS FOR EDIT FORM EVENT LISTENER
+    //   editBtn.addEventListener('click', (e) => {
+    // e.preventDefault()
+    //     e.target.parentNode.parentNode.parentNode.children[1].style.display.toggle()
+    //     if (e.target.parentNode.parentNode.parentNode.children[1].style.display === 'none'){
+    //       e.target.parentNode.parentNode.parentNode.children[1].style.display = 'block'
+    //     } else {
+    //       e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none'
+    //     }
+    //   })
+    // });
 
   //   const editForms = document.querySelectorAll('#edit-form');  // ITERATE THROUGH EACH EDIT FORM AND SUBMIT BUTTON
   //   for (let editForm of editForms){
