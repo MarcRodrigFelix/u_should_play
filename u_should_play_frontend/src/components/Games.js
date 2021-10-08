@@ -38,6 +38,8 @@ class Games{
         const newGame = new Game(gameData)
         newGame.addHTMLToDom()
         newGame.addDeleteFunctionToGame()
+        newGame.addUpdateFunctionToGame()
+        newGame.toggleModal()
     }
 
 
