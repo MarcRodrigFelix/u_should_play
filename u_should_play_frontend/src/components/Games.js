@@ -4,12 +4,12 @@ class Games{
     constructor() {
         this.games = []
         this.service = new GameService()
-        this.consoleGames()
+        // this.consoleGames()
     }
 
-    consoleGames(){
-        this.games.forEach( (game) => { console.log(game) } )
-    }
+    // consoleGames(){
+    //     this.games.forEach( (game) => { console.log(game) } )
+    // }
 
     launchGames(){
        this.service.getGames()

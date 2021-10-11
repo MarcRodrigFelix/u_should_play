@@ -396,13 +396,14 @@ body{
 
 
 .single-game-div{
-  width: 1000px;
-  margin: 150px 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  /* width: 1000px; */
+  display: flex;
+  margin: 100px 0;
+  /* display: grid; */
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* grid-template-rows: 1fr; */
+  /* grid-column-gap: 0px; */
+  /* grid-row-gap: 0px; */
   background: rgba(0,0,0,.5);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
@@ -411,12 +412,14 @@ body{
 
 
 .game-info-section{
+  flex: 1;
   border-radius: 20px;
 }
 
 
 .comments-section{
-  height: 1000px;
+  flex: 1;
+  /* height: 1000px; */
   border-radius: 20px;
   background: linear-gradient(#141e30, #243b55);
   box-sizing: border-box;
@@ -446,7 +449,7 @@ body{
   font:16px/26px Georgia, Garamond, Serif;
   overflow: auto;
   cursor: all-scroll;
-  height: 35%
+  height: 35%;
 }
 
 .game-comments div{

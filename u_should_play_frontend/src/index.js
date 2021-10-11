@@ -4,10 +4,10 @@ const eachGameDiv = document.getElementsByClassName("single-game-div");
 const gamesContainers = document.getElementById('games-container');
 
 
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
   const games = new Games()
   games.launchGames()
-});
+// });
 
 
 

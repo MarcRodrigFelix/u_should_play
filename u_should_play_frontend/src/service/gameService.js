@@ -32,10 +32,6 @@ class GameService{
       body: JSON.stringify(gameData)
     })
     .then( response => { response.json() })
-    .then( json => {
-debugger
-    })
-    .catch( err => { console.log(err) })
   };
 
 

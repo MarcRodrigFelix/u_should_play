@@ -38,6 +38,7 @@ class Game{
 
 
   deleteThisGame(e){
+    e.preventDefault()
     e.target.parentElement.parentElement.parentElement.parentElement.parentElement.remove() // REMOVE GAME ELEMENT FROM DOM
     Game.service.deleteGame(e.target.dataset.id)
   }
@@ -58,8 +59,6 @@ class Game{
     currentGame.children[0].children[0].children[0].children[0].innerText = editedGameData.title
     currentGame.children[0].children[0].children[0].children[1].innerText = editedGameData.image
     currentGame.children[0].children[0].children[0].children[2].innerText = editedGameData.review // UPDATE DOM
-// console.log(currentGame)
-// debugger
   }
 
 
@@ -73,6 +72,7 @@ class Game{
 
 
   openModal(e){
+    e.preventDefault()
     e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none' // MAKE SURE DISPLAY STYLE IS SET TO NONE
 
     if (e.target.parentNode.parentNode.parentNode.children[1].style.display === 'none'){
@@ -84,6 +84,7 @@ class Game{
   }
 
   closeModal(e){
+    e.preventDefault()
     e.target.parentNode.parentNode.parentNode.children[1].style.display = 'none'
   }
 
