@@ -5,16 +5,17 @@ class Game{
   static deleteGames = document.getElementsByClassName('delete')
   static service = new GameService()
 
-
   constructor(gameObject){
     this.id = gameObject.id
     this.title = gameObject.title
     this.image = gameObject.image
     this.review = gameObject.review
     this.gameComments = gameObject.comments
-
     this.gamesLi = document.createElement('li')
     this.gamesLi.style.listStyleType = 'none'
+// console.log(this.gameComments)
+// this.comments = new Comment(this.gameComments)
+// this.getComments()
   }
 
 
@@ -131,7 +132,6 @@ class Game{
     return this.gamesLi
   }
 
-
   renderGameEditForm(){
     return `
     <div class="modal-content">
@@ -162,6 +162,10 @@ class Game{
     </div>`
   }
 
+  getComments(){
+    const comments = new Comments(this.gameComments)
+    comments.getCommentsFromGames()
+  }
 
   addNewComment(){
     return `

@@ -1,11 +1,15 @@
 class Comments{
 
-    constructor(){
-        this.comments = []
+    constructor(comments){
+        this.comments = comments
     }
 
 
-    getComments(){
-        
+    getCommentsFromGames(){
+        // console.log(this.comments)
+        this.comments.forEach( (comment) => {
+            const newComment = new Comment(comment)
+console.log(newComment)
+        })
     }
 }

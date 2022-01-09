@@ -8,6 +8,7 @@ class GameService{
   getGames(){
     return fetch(this.baseUrl)
     .then( response => response.json() )
+    // .then( json => console.log(json) )
   };
 
 

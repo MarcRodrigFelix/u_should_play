@@ -21,6 +21,7 @@ class Games{
                newGame.addDeleteFunctionToGame() // ADD DELETE METHOD TO GAMES
                newGame.addUpdateFunctionToGame()
                newGame.toggleModal()
+            //    newGame.getComments()
            }
         })
     }
